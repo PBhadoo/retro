@@ -1,0 +1,13 @@
+services:
+  emulatorjs:
+    image: node:alpine
+    container_name: emulatorjs
+    working_dir: /app
+    command: node server.js
+    ports:
+      - 8080:80
+    volumes:
+      - ./server.js:/app/server.js:ro
+      - ./web:/app/web:ro
+      - ./roms:/app/roms
+    restart: unless-stopped
