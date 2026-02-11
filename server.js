@@ -1,11 +1,17 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const PORT = 80;
 const ROMS_DIR = path.join(__dirname, 'roms');
 const WEB_DIR = path.join(__dirname, 'web');
 const INDEX_JSON = path.join(ROMS_DIR, 'index.json');
+
+// Password auth config
+const PASSWORD = 'bhadoo';
+const AUTH_TOKEN = crypto.createHash('sha256').update(PASSWORD + '_retro_auth').digest('hex');
+const COOKIE_NAME = 'retro_auth';
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -52,6 +58,129 @@ function saveIndex(games) {
   fs.writeFileSync(INDEX_JSON, JSON.stringify(games, null, 2));
 }
 
+function parseCookies(cookieHeader) {
+  const cookies = {};
+  if (!cookieHeader) return cookies;
+  cookieHeader.split(';').forEach(c => {
+    const [key, val] = c.trim().split('=');
+    if (key && val) cookies[key] = val;
+  });
+  return cookies;
+}
+
+function isAuthenticated(req) {
+  const cookies = parseCookies(req.headers.cookie);
+  return cookies[COOKIE_NAME] === AUTH_TOKEN;
+}
+
+function serveLoginPage(res, errorMsg) {
+  const error = errorMsg ? `<p class="error">${errorMsg}</p>` : '';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NES Game Player - Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 12px;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+        .login-box h1 {
+            color: #e94560;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        .login-box .subtitle {
+            color: #888;
+            margin-bottom: 25px;
+        }
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #0f3460;
+            border-radius: 6px;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            font-size: 1em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .login-box input[type="password"]:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #e94560;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background: #c73652;
+        }
+        .error {
+            color: #e94560;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        footer .heart { color: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>&#127918; NES Player</h1>
+        <p class="subtitle">Enter password to continue</p>
+        ${error}
+        <form method="POST" action="/login">
+            <input type="password" name="password" placeholder="Password" autofocus required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    <footer>Built and Hosted by Parveen Bhadoo <span class="heart">&#10084;</span></footer>
+</body>
+</html>`;
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+  res.end(html);
+}
+
+function parseFormBody(buffer) {
+  const str = buffer.toString('utf8');
+  const params = {};
+  str.split('&').forEach(pair => {
+    const [key, val] = pair.split('=');
+    if (key) params[decodeURIComponent(key)] = decodeURIComponent((val || '').replace(/\+/g, ' '));
+  });
+  return params;
+}
+
 const server = http.createServer((req, res) => {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -64,9 +193,43 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // Login endpoint
+  if (req.method === 'POST' && req.url === '/login') {
+    const chunks = [];
+    req.on('data', chunk => chunks.push(chunk));
+    req.on('end', () => {
+      const body = parseFormBody(Buffer.concat(chunks));
+      if (body.password === PASSWORD) {
+        res.writeHead(302, {
+          'Set-Cookie': `${COOKIE_NAME}=${AUTH_TOKEN}; Path=/; HttpOnly; SameSite=Strict; Max-Age=31536000`,
+          'Location': '/'
+        });
+        res.end();
+      } else {
+        serveLoginPage(res, 'Wrong password. Try again.');
+      }
+    });
+    return;
+  }
+
+  // Logout endpoint
+  if (req.url === '/logout') {
+    res.writeHead(302, {
+      'Set-Cookie': `${COOKIE_NAME}=; Path=/; HttpOnly; Max-Age=0`,
+      'Location': '/'
+    });
+    res.end();
+    return;
+  }
+
+  // Check auth for all other routes
+  if (!isAuthenticated(req)) {
+    serveLoginPage(res);
+    return;
+  }
+
   // Upload endpoint
   if (req.method === 'POST' && req.url === '/upload') {
-    // Read the multipart form data
     const boundary = getBoundary(req.headers['content-type']);
     if (!boundary) {
       res.writeHead(400, { 'Content-Type': 'application/json' });
@@ -95,11 +258,8 @@ const server = http.createServer((req, res) => {
 
       // Update index.json - add to top of list
       const games = loadIndex();
-      // Remove if already exists
       const filtered = games.filter(g => g.file !== filename);
-      // Create display name from filename
       const displayName = filename.replace(/\.nes$/i, '').replace(/\s*\(.*?\)/g, '').trim();
-      // Add to top
       filtered.unshift({ name: displayName, file: filename });
       saveIndex(filtered);
 
@@ -144,7 +304,6 @@ function parseMultipart(buffer, boundary) {
 
   while (true) {
     start = start + boundaryBuf.length;
-    // Skip CRLF after boundary
     if (buffer[start] === 0x0d && buffer[start + 1] === 0x0a) start += 2;
 
     const nextBoundary = indexOf(buffer, boundaryBuf, start);
@@ -152,14 +311,11 @@ function parseMultipart(buffer, boundary) {
 
     const partData = buffer.slice(start, nextBoundary);
 
-    // Find header/body separator (double CRLF)
     const headerEnd = indexOf(partData, Buffer.from('\r\n\r\n'), 0);
     if (headerEnd === -1) { start = nextBoundary; continue; }
 
     const headerStr = partData.slice(0, headerEnd).toString('utf8');
-    // Body is after double CRLF, minus trailing CRLF before next boundary
     let body = partData.slice(headerEnd + 4);
-    // Remove trailing CRLF
     if (body.length >= 2 && body[body.length - 2] === 0x0d && body[body.length - 1] === 0x0a) {
       body = body.slice(0, body.length - 2);
     }
@@ -173,7 +329,6 @@ function parseMultipart(buffer, boundary) {
       data: body,
     });
 
-    // Check if next boundary is the end
     if (indexOf(buffer, endBuf, nextBoundary) === nextBoundary) break;
     start = nextBoundary;
   }
@@ -196,4 +351,5 @@ server.listen(PORT, () => {
   console.log(`NES Game Server running on port ${PORT}`);
   console.log(`Serving web files from: ${WEB_DIR}`);
   console.log(`Serving ROMs from: ${ROMS_DIR}`);
+  console.log('Password auth enabled');
 });

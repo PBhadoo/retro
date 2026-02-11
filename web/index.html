@@ -33,32 +33,7 @@
             margin: 30px auto;
             padding: 0 20px;
             flex: 1;
-        }
-        .game-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .game-card {
-            background: #16213e;
-            border: 1px solid #0f3460;
-            border-radius: 8px;
-            padding: 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .game-card:hover {
-            border-color: #e94560;
-            transform: translateY(-2px);
-        }
-        .game-card h3 {
-            color: #e94560;
-            margin-bottom: 5px;
-        }
-        .game-card p {
-            color: #888;
-            font-size: 0.9em;
+            width: 100%;
         }
         .upload-section {
             background: #16213e;
@@ -69,9 +44,6 @@
             margin-bottom: 20px;
         }
         .upload-section h2 { margin-bottom: 10px; }
-        .upload-section input[type="file"] {
-            margin: 10px 0;
-        }
         .btn {
             background: #e94560;
             color: white;
@@ -88,6 +60,82 @@
             background: #0f3460;
         }
         .btn-secondary:hover { background: #1a4a8a; }
+        .status-msg {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #4ecca3;
+        }
+        .status-msg.error {
+            color: #e94560;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #0f3460;
+            border-radius: 6px;
+            background: #16213e;
+            color: #e0e0e0;
+            font-size: 1em;
+            margin: 15px 0;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        .search-bar::placeholder {
+            color: #666;
+        }
+        .game-count {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        .game-list {
+            list-style: none;
+        }
+        .game-row {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-bottom: none;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .game-row:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+        .game-row:last-child {
+            border-bottom: 1px solid #0f3460;
+            border-radius: 0 0 8px 8px;
+        }
+        .game-row:only-child {
+            border-radius: 8px;
+            border-bottom: 1px solid #0f3460;
+        }
+        .game-row:hover {
+            background: #1a2a4e;
+            border-color: #e94560;
+        }
+        .game-row:hover + .game-row {
+            border-top-color: #e94560;
+        }
+        .game-row .game-name {
+            flex: 1;
+            color: #e0e0e0;
+            font-size: 0.95em;
+        }
+        .game-row .play-icon {
+            color: #e94560;
+            font-size: 1.2em;
+            margin-left: 10px;
+        }
+        .no-games {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
         #player-container {
             display: none;
             position: fixed;
@@ -108,19 +156,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
-        }
-        .no-games {
-            text-align: center;
-            padding: 40px;
-            color: #888;
-        }
-        .status-msg {
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #4ecca3;
-        }
-        .status-msg.error {
-            color: #e94560;
         }
         footer {
             background: #16213e;
@@ -156,11 +191,13 @@
             <div id="upload-status" class="status-msg"></div>
         </div>
 
-        <!-- Server-hosted ROM list -->
+        <!-- Search and Game Library -->
         <h2>&#128193; Game Library</h2>
-        <div id="game-list" class="game-list">
-            <div class="no-games">Loading...</div>
-        </div>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search games..." oninput="filterGames()">
+        <div id="game-count" class="game-count"></div>
+        <ul id="game-list" class="game-list">
+            <li class="no-games">Loading...</li>
+        </ul>
     </div>
 
     <footer>
@@ -174,25 +211,49 @@
     </div>
 
     <script>
-        // Load game list from server
+        let allGames = [];
+
         async function loadGameList() {
-            const container = document.getElementById('game-list');
             try {
                 const resp = await fetch('roms/index.json?t=' + Date.now());
                 if (!resp.ok) throw new Error('No index.json');
-                const games = await resp.json();
-                if (games.length === 0) throw new Error('Empty');
-                container.innerHTML = '';
-                games.forEach(game => {
-                    const card = document.createElement('div');
-                    card.className = 'game-card';
-                    card.innerHTML = '<h3>' + escapeHtml(game.name) + '</h3><p>Click to play</p>';
-                    card.onclick = () => launchGame('roms/' + encodeURIComponent(game.file));
-                    container.appendChild(card);
-                });
+                allGames = await resp.json();
+                // Sort alphabetically by name
+                allGames.sort((a, b) => a.name.localeCompare(b.name));
+                filterGames();
             } catch (e) {
-                container.innerHTML = '<div class="no-games"><p>No games yet. Upload a .nes ROM above!</p></div>';
+                document.getElementById('game-list').innerHTML = '<li class="no-games">No games yet. Upload a .nes ROM above!</li>';
+                document.getElementById('game-count').textContent = '';
             }
+        }
+
+        function filterGames() {
+            const query = document.getElementById('search-bar').value.toLowerCase().trim();
+            const filtered = query
+                ? allGames.filter(g => g.name.toLowerCase().includes(query))
+                : allGames;
+
+            const container = document.getElementById('game-list');
+            const countEl = document.getElementById('game-count');
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<li class="no-games">No games match your search</li>';
+                countEl.textContent = query ? '0 results' : '';
+                return;
+            }
+
+            countEl.textContent = query
+                ? filtered.length + ' of ' + allGames.length + ' games'
+                : allGames.length + ' games';
+
+            container.innerHTML = '';
+            filtered.forEach(game => {
+                const li = document.createElement('li');
+                li.className = 'game-row';
+                li.innerHTML = '<span class="game-name">' + escapeHtml(game.name) + '</span><span class="play-icon">&#9654;</span>';
+                li.onclick = () => launchGame('roms/' + encodeURIComponent(game.file));
+                container.appendChild(li);
+            });
         }
 
         function escapeHtml(text) {
@@ -238,7 +299,8 @@
                 }
 
                 setStatus('Uploaded successfully: ' + result.name);
-                loadGameList(); // Refresh the list
+                // Reload the full game list
+                await loadGameList();
                 return result.file;
             } catch (e) {
                 setStatus('Upload failed: ' + e.message, true);

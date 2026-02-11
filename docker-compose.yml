@@ -5,7 +5,7 @@ services:
     working_dir: /app
     command: node server.js
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ./server.js:/app/server.js:ro
       - ./web:/app/web:ro
