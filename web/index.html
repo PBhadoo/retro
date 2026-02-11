@@ -212,13 +212,16 @@
 
     <script>
         let allGames = [];
+        let filteredGames = [];
+        let displayedCount = 0;
+        const PAGE_SIZE = 50;
+        let isLoadingMore = false;
 
         async function loadGameList() {
             try {
                 const resp = await fetch('roms/index.json?t=' + Date.now());
                 if (!resp.ok) throw new Error('No index.json');
                 allGames = await resp.json();
-                // Sort alphabetically by name
                 allGames.sort((a, b) => a.name.localeCompare(b.name));
                 filterGames();
             } catch (e) {
@@ -229,31 +232,75 @@
 
         function filterGames() {
             const query = document.getElementById('search-bar').value.toLowerCase().trim();
-            const filtered = query
+            filteredGames = query
                 ? allGames.filter(g => g.name.toLowerCase().includes(query))
                 : allGames;
 
             const container = document.getElementById('game-list');
             const countEl = document.getElementById('game-count');
 
-            if (filtered.length === 0) {
+            if (filteredGames.length === 0) {
                 container.innerHTML = '<li class="no-games">No games match your search</li>';
                 countEl.textContent = query ? '0 results' : '';
                 return;
             }
 
             countEl.textContent = query
-                ? filtered.length + ' of ' + allGames.length + ' games'
+                ? filteredGames.length + ' of ' + allGames.length + ' games'
                 : allGames.length + ' games';
 
             container.innerHTML = '';
-            filtered.forEach(game => {
+            displayedCount = 0;
+            loadMoreGames();
+        }
+
+        function loadMoreGames() {
+            if (isLoadingMore) return;
+            isLoadingMore = true;
+
+            const container = document.getElementById('game-list');
+            const end = Math.min(displayedCount + PAGE_SIZE, filteredGames.length);
+
+            for (let i = displayedCount; i < end; i++) {
+                const game = filteredGames[i];
                 const li = document.createElement('li');
                 li.className = 'game-row';
                 li.innerHTML = '<span class="game-name">' + escapeHtml(game.name) + '</span><span class="play-icon">&#9654;</span>';
                 li.onclick = () => launchGame('roms/' + encodeURIComponent(game.file));
                 container.appendChild(li);
-            });
+            }
+
+            displayedCount = end;
+
+            // Remove old sentinel if exists
+            const oldSentinel = document.getElementById('load-more-sentinel');
+            if (oldSentinel) oldSentinel.remove();
+
+            // Add "load more" sentinel if there are more games
+            if (displayedCount < filteredGames.length) {
+                const sentinel = document.createElement('li');
+                sentinel.id = 'load-more-sentinel';
+                sentinel.className = 'no-games';
+                sentinel.textContent = 'Showing ' + displayedCount + ' of ' + filteredGames.length + ' \u2014 scroll for more';
+                sentinel.style.cursor = 'pointer';
+                sentinel.onclick = () => { loadMoreGames(); };
+                container.appendChild(sentinel);
+                observeSentinel(sentinel);
+            }
+
+            isLoadingMore = false;
+        }
+
+        // IntersectionObserver to auto-load more when scrolling near bottom
+        let observer = null;
+        function observeSentinel(el) {
+            if (observer) observer.disconnect();
+            observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    loadMoreGames();
+                }
+            }, { rootMargin: '200px' });
+            observer.observe(el);
         }
 
         function escapeHtml(text) {
