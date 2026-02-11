@@ -1,0 +1,5 @@
+# Replace YOUR_DOMAIN with your actual domain, e.g.: retro.example.com
+# If you don't have a domain yet, use :80 instead
+:80, :443 {
+    reverse_proxy emulatorjs:80
+}

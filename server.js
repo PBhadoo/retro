@@ -201,7 +201,7 @@ const server = http.createServer((req, res) => {
       const body = parseFormBody(Buffer.concat(chunks));
       if (body.password === PASSWORD) {
         res.writeHead(302, {
-          'Set-Cookie': `${COOKIE_NAME}=${AUTH_TOKEN}; Path=/; HttpOnly; SameSite=Strict; Max-Age=31536000`,
+          'Set-Cookie': `${COOKIE_NAME}=${AUTH_TOKEN}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000`,
           'Location': '/'
         });
         res.end();

@@ -4,10 +4,26 @@ services:
     container_name: emulatorjs
     working_dir: /app
     command: node server.js
-    ports:
-      - 80:80
     volumes:
       - ./server.js:/app/server.js:ro
       - ./web:/app/web:ro
       - ./roms:/app/roms
     restart: unless-stopped
+
+  caddy:
+    image: caddy:alpine
+    container_name: caddy
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - emulatorjs
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
