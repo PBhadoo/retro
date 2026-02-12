@@ -238,12 +238,11 @@ async function uploadOnly(){await uploadToServer()}
 function launchGame(romUrl){
 var p=document.getElementById('player-container'),g=document.getElementById('game');
 p.style.display='block';g.innerHTML='';
-var kb=loadKeyBindings();
 window.EJS_player='#game';
 window.EJS_gameUrl=romUrl;
 window.EJS_core='nes';
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
-window.EJS_defaultControls={0:{0:{value:''+kb.b},1:{value:''+kb.a},2:{value:''+kb.select},3:{value:''+kb.start},4:{value:''+kb.up},5:{value:''+kb.down},6:{value:''+kb.left},7:{value:''+kb.right},8:{value:''+kb.l},9:{value:''+kb.r}}};
+window.EJS_language='en';
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
 resetToolbarTimer();
