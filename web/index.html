@@ -46,8 +46,10 @@ body{background:#1a1a2e;color:#e0e0e0;font-family:'Segoe UI',Tahoma,Geneva,Verda
 .game-row .play-icon{color:#e94560;font-size:1.2em;margin-left:10px}
 .no-games{text-align:center;padding:40px;color:#888}
 #player-container{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:1000}
-.player-toolbar{position:fixed;top:0;left:0;right:0;z-index:1001;display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:8px 12px;background:rgba(0,0,0,.7);transition:opacity .3s}
-.player-toolbar.hidden{opacity:0;pointer-events:none}
+.player-toolbar{position:fixed;top:0;left:0;right:0;z-index:1001;display:none;justify-content:flex-end;align-items:center;gap:8px;padding:8px 12px;background:rgba(0,0,0,.85);transition:opacity .3s}
+.player-toolbar.visible{display:flex}
+.menu-toggle{position:fixed;top:8px;right:8px;z-index:1002;width:36px;height:36px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;cursor:pointer;font-size:1.3em;display:flex;align-items:center;justify-content:center;line-height:1}
+.menu-toggle:hover{background:rgba(233,69,96,.8)}
 .toolbar-btn{background:rgba(233,69,96,.9);color:#fff;border:none;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:.9em;white-space:nowrap}
 .toolbar-btn:hover{background:#e94560}
 .toolbar-btn.active{background:#4ecca3}
@@ -118,6 +120,7 @@ footer .heart{color:#e94560;font-size:1.1em}
 </div>
 <footer>Built and Hosted by Parveen Bhadoo <span class="heart">&#10084;</span></footer>
 <div id="player-container">
+<button class="menu-toggle" id="menu-toggle" onclick="toggleToolbar()">&#9776;</button>
 <div class="player-toolbar" id="player-toolbar">
 <button class="toolbar-btn" id="fullscreen-btn" onclick="toggleFullscreen()">&#x26F6; Fullscreen</button>
 <button class="toolbar-btn" id="close-btn" onclick="closePlayer()">&#10005; Close</button>
@@ -188,12 +191,10 @@ function toggleFullscreen(){var c=document.getElementById('player-container');if
 document.addEventListener('fullscreenchange',updateFullscreenUI);document.addEventListener('webkitfullscreenchange',updateFullscreenUI);
 function updateFullscreenUI(){var fs=!!(document.fullscreenElement||document.webkitFullscreenElement);var btn=document.getElementById('fullscreen-btn');if(fs){btn.innerHTML='&#10006; Exit FS';btn.classList.add('active');document.body.classList.add('fullscreen-active')}else{btn.innerHTML='&#x26F6; Fullscreen';btn.classList.remove('active');document.body.classList.remove('fullscreen-active');if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock()}}
 
-// === TOOLBAR AUTO-HIDE ===
+// === TOOLBAR TOGGLE ===
 var toolbarTimer=null;
-function resetToolbarTimer(){var tb=document.getElementById('player-toolbar');tb.classList.remove('hidden');clearTimeout(toolbarTimer);var s=loadSettings();if(s.autoHideToolbar){toolbarTimer=setTimeout(function(){tb.classList.add('hidden')},3000)}}
-document.getElementById('player-container').addEventListener('mousemove',resetToolbarTimer);
-document.getElementById('player-container').addEventListener('touchstart',resetToolbarTimer);
-document.getElementById('player-toolbar').addEventListener('mouseenter',function(){clearTimeout(toolbarTimer);document.getElementById('player-toolbar').classList.remove('hidden')});
+function toggleToolbar(){var tb=document.getElementById('player-toolbar');if(tb.classList.contains('visible')){tb.classList.remove('visible');clearTimeout(toolbarTimer)}else{tb.classList.add('visible');clearTimeout(toolbarTimer);toolbarTimer=setTimeout(function(){tb.classList.remove('visible')},5000)}}
+function resetToolbarTimer(){}
 
 // === SERVICE WORKER & OFFLINE ===
 var swReady=false,cachedRomUrls=new Set(),currentFilter='all';
