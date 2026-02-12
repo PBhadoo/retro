@@ -68,7 +68,7 @@ body{background:#1a1a2e;color:#e0e0e0;font-family:'Segoe UI',Tahoma,Geneva,Verda
 .key-bind-btn.listening{border-color:#f0a500;color:#f0a500;animation:pulse .8s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 .toggle-switch{position:relative;width:50px;height:26px}
-.toggle-switch input{opacity:0;width:0;height:0}
+.toggle-switch input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;z-index:1;margin:0;top:0;left:0}
 .toggle-slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#333;transition:.3s;border-radius:26px}
 .toggle-slider:before{position:absolute;content:"";height:20px;width:20px;left:3px;bottom:3px;background-color:#e0e0e0;transition:.3s;border-radius:50%}
 .toggle-switch input:checked+.toggle-slider{background-color:#4ecca3}
