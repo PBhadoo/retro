@@ -214,6 +214,14 @@ window.EJS_player='#game';
 window.EJS_gameUrl=romUrl;
 window.EJS_core='nes';
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
+window.EJS_VirtualGamepadSettings = [
+  {type:"zone",location:"right",buttons:[
+    {id:"x",label:"X",input_value:9},
+    {id:"y",label:"Y",input_value:1},
+    {id:"a",label:"A",input_value:8},
+    {id:"b",label:"B",input_value:0}
+  ]}
+];
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
 resetToolbarTimer();
