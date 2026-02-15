@@ -213,15 +213,13 @@ p.style.display='block';g.innerHTML='';
 window.EJS_player='#game';
 window.EJS_gameUrl=romUrl;
 window.EJS_core='nes';
-window.EJS_language='en';
+window.EJS_Localization={};
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
 window.EJS_VirtualGamepadSettings = [
-  {type:"zone",location:"right",buttons:[
-    {id:"x",label:"X",input_value:9},
-    {id:"y",label:"Y",input_value:1},
-    {id:"a",label:"A",input_value:8},
-    {id:"b",label:"B",input_value:0}
-  ]}
+  {type:"zone",location:"left",inputValues:[4,7,5,6]},
+  {type:"zone",location:"right",inputValues:[9,8,0,1]},
+  {type:"button",text:"Start",id:"start",location:"center",left:-10,fontSize:12,block:true,input_value:3},
+  {type:"button",text:"Select",id:"select",location:"center",left:60,fontSize:12,block:true,input_value:2}
 ];
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
