@@ -1,1 +1,3138 @@
-[]
+[
+  {
+    "name": "2020 Super Baseball",
+    "file": "2020 Super Baseball (USA).sfc"
+  },
+  {
+    "name": "3 Ninjas Kick Back",
+    "file": "3 Ninjas Kick Back (USA).sfc"
+  },
+  {
+    "name": "7th Saga, The",
+    "file": "7th Saga, The (USA).sfc"
+  },
+  {
+    "name": "A.S.P. - Air Strike Patrol",
+    "file": "A.S.P. - Air Strike Patrol (USA).sfc"
+  },
+  {
+    "name": "ABC Monday Night Football",
+    "file": "ABC Monday Night Football (USA).sfc"
+  },
+  {
+    "name": "ACME Animation Factory",
+    "file": "ACME Animation Factory (USA).sfc"
+  },
+  {
+    "name": "Aaahh!!! Real Monsters",
+    "file": "Aaahh!!! Real Monsters (USA).sfc"
+  },
+  {
+    "name": "ActRaiser",
+    "file": "ActRaiser (USA) (Arcade).sfc"
+  },
+  {
+    "name": "ActRaiser",
+    "file": "ActRaiser (USA).sfc"
+  },
+  {
+    "name": "ActRaiser 2",
+    "file": "ActRaiser 2 (USA).sfc"
+  },
+  {
+    "name": "Addams Family Values",
+    "file": "Addams Family Values (USA) (En,Fr,De).sfc"
+  },
+  {
+    "name": "Addams Family, The",
+    "file": "Addams Family, The (USA) (Arcade).sfc"
+  },
+  {
+    "name": "Addams Family, The",
+    "file": "Addams Family, The (USA).sfc"
+  },
+  {
+    "name": "Addams Family, The - Pugsley's Scavenger Hunt",
+    "file": "Addams Family, The - Pugsley's Scavenger Hunt (USA).sfc"
+  },
+  {
+    "name": "Advanced Dungeons & Dragons - Eye of the Beholder",
+    "file": "Advanced Dungeons & Dragons - Eye of the Beholder (USA).sfc"
+  },
+  {
+    "name": "Adventures of Batman & Robin, The",
+    "file": "Adventures of Batman & Robin, The (USA).sfc"
+  },
+  {
+    "name": "Adventures of Dr. Franken, The",
+    "file": "Adventures of Dr. Franken, The (USA).sfc"
+  },
+  {
+    "name": "Adventures of Kid Kleets, The",
+    "file": "Adventures of Kid Kleets, The (USA) (En,Fr,Es).sfc"
+  },
+  {
+    "name": "Adventures of Rocky and Bullwinkle and Friends, The",
+    "file": "Adventures of Rocky and Bullwinkle and Friends, The (USA).sfc"
+  },
+  {
+    "name": "Adventures of Yogi Bear",
+    "file": "Adventures of Yogi Bear (USA).sfc"
+  },
+  {
+    "name": "Aero Fighters",
+    "file": "Aero Fighters (USA).sfc"
+  },
+  {
+    "name": "Aero the Acro-Bat",
+    "file": "Aero the Acro-Bat (USA).sfc"
+  },
+  {
+    "name": "Aero the Acro-Bat 2",
+    "file": "Aero the Acro-Bat 2 (USA).sfc"
+  },
+  {
+    "name": "Aerobiz",
+    "file": "Aerobiz (USA).sfc"
+  },
+  {
+    "name": "Aerobiz Supersonic",
+    "file": "Aerobiz Supersonic (USA).sfc"
+  },
+  {
+    "name": "Air Cavalry",
+    "file": "Air Cavalry (USA).sfc"
+  },
+  {
+    "name": "Al Unser Jr.'s Road to the Top",
+    "file": "Al Unser Jr.'s Road to the Top (USA).sfc"
+  },
+  {
+    "name": "Aladdin",
+    "file": "Aladdin (USA).sfc"
+  },
+  {
+    "name": "Alien 3",
+    "file": "Alien 3 (USA).sfc"
+  },
+  {
+    "name": "Alien vs Predator",
+    "file": "Alien vs Predator (USA).sfc"
+  },
+  {
+    "name": "American Gladiators",
+    "file": "American Gladiators (USA).sfc"
+  },
+  {
+    "name": "American Tail, An - Fievel Goes West",
+    "file": "American Tail, An - Fievel Goes West (USA).sfc"
+  },
+  {
+    "name": "Andre Agassi Tennis",
+    "file": "Andre Agassi Tennis (USA).sfc"
+  },
+  {
+    "name": "Animaniacs",
+    "file": "Animaniacs (USA).sfc"
+  },
+  {
+    "name": "Arcade's Greatest Hits - The Atari Collection 1",
+    "file": "Arcade's Greatest Hits - The Atari Collection 1 (USA).sfc"
+  },
+  {
+    "name": "Arcana",
+    "file": "Arcana (USA).sfc"
+  },
+  {
+    "name": "Arcus Spirits",
+    "file": "Arcus Spirits (USA) (Proto).sfc"
+  },
+  {
+    "name": "Ardy Lightfoot",
+    "file": "Ardy Lightfoot (USA).sfc"
+  },
+  {
+    "name": "Arkanoid - Doh It Again",
+    "file": "Arkanoid - Doh It Again (USA).sfc"
+  },
+  {
+    "name": "Art of Fighting",
+    "file": "Art of Fighting (USA).sfc"
+  },
+  {
+    "name": "Axelay",
+    "file": "Axelay (USA).sfc"
+  },
+  {
+    "name": "B.O.B.",
+    "file": "B.O.B. (USA).sfc"
+  },
+  {
+    "name": "Baby T-Rex",
+    "file": "Baby T-Rex (USA) (Sample).sfc"
+  },
+  {
+    "name": "Ballz 3D - Fighting at Its Ballziest",
+    "file": "Ballz 3D - Fighting at Its Ballziest (USA).sfc"
+  },
+  {
+    "name": "Barbie Super Model",
+    "file": "Barbie Super Model (USA).sfc"
+  },
+  {
+    "name": "Barbie Vacation Adventure",
+    "file": "Barbie Vacation Adventure (USA) (Proto).sfc"
+  },
+  {
+    "name": "Barkley Shut Up and Jam!",
+    "file": "Barkley Shut Up and Jam! (USA).sfc"
+  },
+  {
+    "name": "Bass Masters Classic",
+    "file": "Bass Masters Classic (USA).sfc"
+  },
+  {
+    "name": "Bass Masters Classic - Pro Edition",
+    "file": "Bass Masters Classic - Pro Edition (USA).sfc"
+  },
+  {
+    "name": "Bassin's Black Bass",
+    "file": "Bassin's Black Bass (USA).sfc"
+  },
+  {
+    "name": "Batman [b]",
+    "file": "Batman (USA) (Proto) [b].sfc"
+  },
+  {
+    "name": "Batman - Revenge of the Joker",
+    "file": "Batman - Revenge of the Joker (USA) (Proto).sfc"
+  },
+  {
+    "name": "Batman Forever",
+    "file": "Batman Forever (USA).sfc"
+  },
+  {
+    "name": "Batman Returns",
+    "file": "Batman Returns (USA).sfc"
+  },
+  {
+    "name": "Battle Blaze",
+    "file": "Battle Blaze (USA).sfc"
+  },
+  {
+    "name": "Battle Cars",
+    "file": "Battle Cars (USA).sfc"
+  },
+  {
+    "name": "Battle Clash",
+    "file": "Battle Clash (USA).sfc"
+  },
+  {
+    "name": "Battle Grand Prix",
+    "file": "Battle Grand Prix (USA).sfc"
+  },
+  {
+    "name": "Battletoads in Battlemaniacs",
+    "file": "Battletoads in Battlemaniacs (USA).sfc"
+  },
+  {
+    "name": "Battletoads-Double Dragon",
+    "file": "Battletoads-Double Dragon (USA).sfc"
+  },
+  {
+    "name": "Bazooka Blitzkrieg",
+    "file": "Bazooka Blitzkrieg (USA).sfc"
+  },
+  {
+    "name": "Beauty and the Beast",
+    "file": "Beauty and the Beast (USA).sfc"
+  },
+  {
+    "name": "Beavis and Butt-Head",
+    "file": "Beavis and Butt-Head (USA).sfc"
+  },
+  {
+    "name": "Bebe's Kids",
+    "file": "Bebe's Kids (USA).sfc"
+  },
+  {
+    "name": "Beethoven - The Ultimate Canine Caper!",
+    "file": "Beethoven - The Ultimate Canine Caper! (USA).sfc"
+  },
+  {
+    "name": "Best of the Best - Championship Karate",
+    "file": "Best of the Best - Championship Karate (USA).sfc"
+  },
+  {
+    "name": "Big Sky Trooper",
+    "file": "Big Sky Trooper (USA).sfc"
+  },
+  {
+    "name": "Biker Mice from Mars",
+    "file": "Biker Mice from Mars (USA).sfc"
+  },
+  {
+    "name": "Bill Laimbeer's Combat Basketball",
+    "file": "Bill Laimbeer's Combat Basketball (USA).sfc"
+  },
+  {
+    "name": "Bill Walsh College Football",
+    "file": "Bill Walsh College Football (USA).sfc"
+  },
+  {
+    "name": "BioMetal",
+    "file": "BioMetal (USA).sfc"
+  },
+  {
+    "name": "BlaZeon - The Bio-Cyborg Challenge",
+    "file": "BlaZeon - The Bio-Cyborg Challenge (USA).sfc"
+  },
+  {
+    "name": "Blackthorne",
+    "file": "Blackthorne (USA).sfc"
+  },
+  {
+    "name": "Blues Brothers, The",
+    "file": "Blues Brothers, The (USA).sfc"
+  },
+  {
+    "name": "Bobby's World",
+    "file": "Bobby's World (USA) (Proto).sfc"
+  },
+  {
+    "name": "Bonkers",
+    "file": "Bonkers (USA).sfc"
+  },
+  {
+    "name": "Boogerman - A Pick and Flick Adventure",
+    "file": "Boogerman - A Pick and Flick Adventure (USA).sfc"
+  },
+  {
+    "name": "Boxing Legends of the Ring",
+    "file": "Boxing Legends of the Ring (USA).sfc"
+  },
+  {
+    "name": "Brain Lord",
+    "file": "Brain Lord (USA).sfc"
+  },
+  {
+    "name": "Brainies, The",
+    "file": "Brainies, The (USA).sfc"
+  },
+  {
+    "name": "Bram Stoker's Dracula",
+    "file": "Bram Stoker's Dracula (USA).sfc"
+  },
+  {
+    "name": "Brandish",
+    "file": "Brandish (USA).sfc"
+  },
+  {
+    "name": "Brawl Brothers",
+    "file": "Brawl Brothers (USA).sfc"
+  },
+  {
+    "name": "BreakThru!",
+    "file": "BreakThru! (USA).sfc"
+  },
+  {
+    "name": "Breath of Fire",
+    "file": "Breath of Fire (USA).sfc"
+  },
+  {
+    "name": "Breath of Fire II",
+    "file": "Breath of Fire II (USA).sfc"
+  },
+  {
+    "name": "Brett Hull Hockey",
+    "file": "Brett Hull Hockey (USA).sfc"
+  },
+  {
+    "name": "Brett Hull Hockey 95",
+    "file": "Brett Hull Hockey 95 (USA).sfc"
+  },
+  {
+    "name": "Bronkie the Bronchiasaurus",
+    "file": "Bronkie the Bronchiasaurus (USA) (En,Es).sfc"
+  },
+  {
+    "name": "Brunswick World Tournament of Champions",
+    "file": "Brunswick World Tournament of Champions (USA).sfc"
+  },
+  {
+    "name": "Brutal - Paws of Fury",
+    "file": "Brutal - Paws of Fury (USA).sfc"
+  },
+  {
+    "name": "Bubsy II",
+    "file": "Bubsy II (USA).sfc"
+  },
+  {
+    "name": "Bubsy in - Claws Encounters of the Furred Kind",
+    "file": "Bubsy in - Claws Encounters of the Furred Kind (USA).sfc"
+  },
+  {
+    "name": "Bugs Bunny - Rabbit Rampage",
+    "file": "Bugs Bunny - Rabbit Rampage (USA).sfc"
+  },
+  {
+    "name": "Bulls vs Blazers and the NBA Playoffs",
+    "file": "Bulls vs Blazers and the NBA Playoffs (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Bust-A-Move",
+    "file": "Bust-A-Move (USA).sfc"
+  },
+  {
+    "name": "Cacoma Knight in Bizyland",
+    "file": "Cacoma Knight in Bizyland (USA).sfc"
+  },
+  {
+    "name": "Cal Ripken Jr. Baseball",
+    "file": "Cal Ripken Jr. Baseball (USA).sfc"
+  },
+  {
+    "name": "California Games II",
+    "file": "California Games II (USA).sfc"
+  },
+  {
+    "name": "Cannondale Cup",
+    "file": "Cannondale Cup (USA).sfc"
+  },
+  {
+    "name": "Capcom's MVP Football",
+    "file": "Capcom's MVP Football (USA).sfc"
+  },
+  {
+    "name": "Capcom's Soccer Shootout",
+    "file": "Capcom's Soccer Shootout (USA).sfc"
+  },
+  {
+    "name": "Captain America and the Avengers",
+    "file": "Captain America and the Avengers (USA).sfc"
+  },
+  {
+    "name": "Captain Commando",
+    "file": "Captain Commando (USA).sfc"
+  },
+  {
+    "name": "Captain Novolin",
+    "file": "Captain Novolin (USA) (En,Fr,Es).sfc"
+  },
+  {
+    "name": "Carrier Aces",
+    "file": "Carrier Aces (USA).sfc"
+  },
+  {
+    "name": "Casper",
+    "file": "Casper (USA).sfc"
+  },
+  {
+    "name": "Castlevania - Dracula X",
+    "file": "Castlevania - Dracula X (USA).sfc"
+  },
+  {
+    "name": "Champions - World Class Soccer",
+    "file": "Champions - World Class Soccer (USA) (En,Fr,De,Es).sfc"
+  },
+  {
+    "name": "Championship Pool",
+    "file": "Championship Pool (USA).sfc"
+  },
+  {
+    "name": "Championship Soccer '94",
+    "file": "Championship Soccer '94 (USA) (En,Fr,De,It).sfc"
+  },
+  {
+    "name": "Chavez",
+    "file": "Chavez (USA) (Es).sfc"
+  },
+  {
+    "name": "Chavez II",
+    "file": "Chavez II (USA) (Es).sfc"
+  },
+  {
+    "name": "Chessmaster, The",
+    "file": "Chessmaster, The (USA).sfc"
+  },
+  {
+    "name": "Chester Cheetah - Too Cool to Fool",
+    "file": "Chester Cheetah - Too Cool to Fool (USA).sfc"
+  },
+  {
+    "name": "Chester Cheetah - Wild Wild Quest",
+    "file": "Chester Cheetah - Wild Wild Quest (USA).sfc"
+  },
+  {
+    "name": "Choplifter III - Rescue-Survive",
+    "file": "Choplifter III - Rescue-Survive (USA).sfc"
+  },
+  {
+    "name": "Chrono Trigger",
+    "file": "Chrono Trigger (USA).sfc"
+  },
+  {
+    "name": "Chuck Rock",
+    "file": "Chuck Rock (USA).sfc"
+  },
+  {
+    "name": "Clay Fighter",
+    "file": "Clay Fighter (USA).sfc"
+  },
+  {
+    "name": "Clay Fighter - Tournament Edition",
+    "file": "Clay Fighter - Tournament Edition (USA).sfc"
+  },
+  {
+    "name": "Clay Fighter 2 - Judgment Clay",
+    "file": "Clay Fighter 2 - Judgment Clay (USA).sfc"
+  },
+  {
+    "name": "Claymates",
+    "file": "Claymates (USA).sfc"
+  },
+  {
+    "name": "Cliffhanger",
+    "file": "Cliffhanger (USA).sfc"
+  },
+  {
+    "name": "Clue",
+    "file": "Clue (USA).sfc"
+  },
+  {
+    "name": "College Football USA 97",
+    "file": "College Football USA 97 (USA).sfc"
+  },
+  {
+    "name": "College Slam",
+    "file": "College Slam (USA).sfc"
+  },
+  {
+    "name": "Combatribes, The",
+    "file": "Combatribes, The (USA).sfc"
+  },
+  {
+    "name": "Congo - The Movie - Secret of Zinj",
+    "file": "Congo - The Movie - Secret of Zinj (USA) (Proto).sfc"
+  },
+  {
+    "name": "Congo's Caper",
+    "file": "Congo's Caper (USA).sfc"
+  },
+  {
+    "name": "Contra III - The Alien Wars",
+    "file": "Contra III - The Alien Wars (USA).sfc"
+  },
+  {
+    "name": "Cool Spot",
+    "file": "Cool Spot (USA).sfc"
+  },
+  {
+    "name": "Cool World",
+    "file": "Cool World (USA).sfc"
+  },
+  {
+    "name": "CutThroat Island",
+    "file": "CutThroat Island (USA).sfc"
+  },
+  {
+    "name": "Cyber Spin",
+    "file": "Cyber Spin (USA).sfc"
+  },
+  {
+    "name": "Cybernator",
+    "file": "Cybernator (USA).sfc"
+  },
+  {
+    "name": "D-Force",
+    "file": "D-Force (USA).sfc"
+  },
+  {
+    "name": "Daffy Duck - The Marvin Missions",
+    "file": "Daffy Duck - The Marvin Missions (USA).sfc"
+  },
+  {
+    "name": "Darius Twin",
+    "file": "Darius Twin (USA).sfc"
+  },
+  {
+    "name": "David Crane's Amazing Tennis",
+    "file": "David Crane's Amazing Tennis (USA) (Arcade).sfc"
+  },
+  {
+    "name": "David Crane's Amazing Tennis",
+    "file": "David Crane's Amazing Tennis (USA).sfc"
+  },
+  {
+    "name": "Death and Return of Superman, The",
+    "file": "Death and Return of Superman, The (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Demolition Man",
+    "file": "Demolition Man (USA).sfc"
+  },
+  {
+    "name": "Demon's Crest",
+    "file": "Demon's Crest (USA).sfc"
+  },
+  {
+    "name": "Dennis the Menace",
+    "file": "Dennis the Menace (USA).sfc"
+  },
+  {
+    "name": "Desert Strike - Return to the Gulf",
+    "file": "Desert Strike - Return to the Gulf (USA).sfc"
+  },
+  {
+    "name": "Dig & Spike Volleyball",
+    "file": "Dig & Spike Volleyball (USA).sfc"
+  },
+  {
+    "name": "DinoCity",
+    "file": "DinoCity (USA).sfc"
+  },
+  {
+    "name": "Dirt Trax FX",
+    "file": "Dirt Trax FX (USA).sfc"
+  },
+  {
+    "name": "Donkey Kong Country",
+    "file": "Donkey Kong Country (USA) (Rev 2).sfc"
+  },
+  {
+    "name": "Donkey Kong Country - Competition Cartridge",
+    "file": "Donkey Kong Country - Competition Cartridge (USA).sfc"
+  },
+  {
+    "name": "Donkey Kong Country 2 - Diddy's Kong Quest",
+    "file": "Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr) (Rev 1).sfc"
+  },
+  {
+    "name": "Donkey Kong Country 3 - Dixie Kong's Double Trouble!",
+    "file": "Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr).sfc"
+  },
+  {
+    "name": "Doom",
+    "file": "Doom (USA).sfc"
+  },
+  {
+    "name": "Doom Troopers - Mutant Chronicles",
+    "file": "Doom Troopers - Mutant Chronicles (USA).sfc"
+  },
+  {
+    "name": "Doomsday Warrior",
+    "file": "Doomsday Warrior (USA).sfc"
+  },
+  {
+    "name": "Double Dragon V - The Shadow Falls",
+    "file": "Double Dragon V - The Shadow Falls (USA).sfc"
+  },
+  {
+    "name": "Dragon - The Bruce Lee Story",
+    "file": "Dragon - The Bruce Lee Story (USA).sfc"
+  },
+  {
+    "name": "Dragon View",
+    "file": "Dragon View (USA).sfc"
+  },
+  {
+    "name": "Dragon's Lair",
+    "file": "Dragon's Lair (USA).sfc"
+  },
+  {
+    "name": "Drakkhen",
+    "file": "Drakkhen (USA).sfc"
+  },
+  {
+    "name": "Dream T.V.",
+    "file": "Dream T.V. (USA).sfc"
+  },
+  {
+    "name": "Duel, The - Test Drive II",
+    "file": "Duel, The - Test Drive II (USA).sfc"
+  },
+  {
+    "name": "Dungeon Master",
+    "file": "Dungeon Master (USA).sfc"
+  },
+  {
+    "name": "E.V.O. - Search for Eden",
+    "file": "E.V.O. - Search for Eden (USA).sfc"
+  },
+  {
+    "name": "ESPN Baseball Tonight",
+    "file": "ESPN Baseball Tonight (USA).sfc"
+  },
+  {
+    "name": "ESPN National Hockey Night",
+    "file": "ESPN National Hockey Night (USA).sfc"
+  },
+  {
+    "name": "ESPN Speedworld",
+    "file": "ESPN Speedworld (USA).sfc"
+  },
+  {
+    "name": "ESPN Sunday Night NFL",
+    "file": "ESPN Sunday Night NFL (USA).sfc"
+  },
+  {
+    "name": "Earth Defense Force",
+    "file": "Earth Defense Force (USA).sfc"
+  },
+  {
+    "name": "EarthBound",
+    "file": "EarthBound (USA).sfc"
+  },
+  {
+    "name": "Earthworm Jim",
+    "file": "Earthworm Jim (USA).sfc"
+  },
+  {
+    "name": "Earthworm Jim 2",
+    "file": "Earthworm Jim 2 (USA).sfc"
+  },
+  {
+    "name": "Eek! The Cat",
+    "file": "Eek! The Cat (USA).sfc"
+  },
+  {
+    "name": "Elite Soccer",
+    "file": "Elite Soccer (USA).sfc"
+  },
+  {
+    "name": "Emmitt Smith Football",
+    "file": "Emmitt Smith Football (USA).sfc"
+  },
+  {
+    "name": "Equinox",
+    "file": "Equinox (USA).sfc"
+  },
+  {
+    "name": "Eurit",
+    "file": "Eurit (USA) (Proto) (1995-05-29).sfc"
+  },
+  {
+    "name": "Exertainment Mountain Bike Rally",
+    "file": "Exertainment Mountain Bike Rally (USA).sfc"
+  },
+  {
+    "name": "Exertainment Mountain Bike Rally + Speed Racer",
+    "file": "Exertainment Mountain Bike Rally + Speed Racer (USA).sfc"
+  },
+  {
+    "name": "Extra Innings",
+    "file": "Extra Innings (USA).sfc"
+  },
+  {
+    "name": "F-Zero",
+    "file": "F-Zero (USA).sfc"
+  },
+  {
+    "name": "F1 Pole Position",
+    "file": "F1 Pole Position (USA).sfc"
+  },
+  {
+    "name": "F1 ROC - Race of Champions",
+    "file": "F1 ROC - Race of Champions (USA).sfc"
+  },
+  {
+    "name": "F1-ROC II - Race of Champions",
+    "file": "F1-ROC II - Race of Champions (USA).sfc"
+  },
+  {
+    "name": "FIFA International Soccer",
+    "file": "FIFA International Soccer (USA).sfc"
+  },
+  {
+    "name": "FIFA Soccer 96",
+    "file": "FIFA Soccer 96 (USA) (En,Fr,De,Es,It,Sv).sfc"
+  },
+  {
+    "name": "FIFA Soccer 97",
+    "file": "FIFA Soccer 97 (USA) (En,Fr,De,Es,It,Sv).sfc"
+  },
+  {
+    "name": "Faceball 2000",
+    "file": "Faceball 2000 (USA).sfc"
+  },
+  {
+    "name": "Falcon",
+    "file": "Falcon (USA) (Proto).sfc"
+  },
+  {
+    "name": "Family Dog",
+    "file": "Family Dog (USA).sfc"
+  },
+  {
+    "name": "Family Feud",
+    "file": "Family Feud (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Fatal Fury",
+    "file": "Fatal Fury (USA).sfc"
+  },
+  {
+    "name": "Fatal Fury 2",
+    "file": "Fatal Fury 2 (USA).sfc"
+  },
+  {
+    "name": "Fatal Fury Special",
+    "file": "Fatal Fury Special (USA).sfc"
+  },
+  {
+    "name": "Fighter's History",
+    "file": "Fighter's History (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Final Fantasy - Mystic Quest",
+    "file": "Final Fantasy - Mystic Quest (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Final Fantasy II",
+    "file": "Final Fantasy II (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Final Fantasy III",
+    "file": "Final Fantasy III (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Final Fight",
+    "file": "Final Fight (USA).sfc"
+  },
+  {
+    "name": "Final Fight 2",
+    "file": "Final Fight 2 (USA).sfc"
+  },
+  {
+    "name": "Final Fight 3",
+    "file": "Final Fight 3 (USA).sfc"
+  },
+  {
+    "name": "Final Fight Guy",
+    "file": "Final Fight Guy (USA).sfc"
+  },
+  {
+    "name": "FireStriker",
+    "file": "FireStriker (USA).sfc"
+  },
+  {
+    "name": "Firearm",
+    "file": "Firearm (USA) (Proto) (1993-12-17).sfc"
+  },
+  {
+    "name": "Firepower 2000",
+    "file": "Firepower 2000 (USA).sfc"
+  },
+  {
+    "name": "Fireteam Rogue",
+    "file": "Fireteam Rogue (USA) (Proto 1).sfc"
+  },
+  {
+    "name": "Fireteam Rogue",
+    "file": "Fireteam Rogue (USA) (Proto 2) (1995-01-16).sfc"
+  },
+  {
+    "name": "First Samurai",
+    "file": "First Samurai (USA).sfc"
+  },
+  {
+    "name": "Flashback - The Quest for Identity",
+    "file": "Flashback - The Quest for Identity (USA) (En,Fr,De).sfc"
+  },
+  {
+    "name": "Flintstones, The",
+    "file": "Flintstones, The (USA) (En,Fr,De,Es,It).sfc"
+  },
+  {
+    "name": "Flintstones, The - The Treasure of Sierra Madrock",
+    "file": "Flintstones, The - The Treasure of Sierra Madrock (USA).sfc"
+  },
+  {
+    "name": "Football Fury",
+    "file": "Football Fury (USA).sfc"
+  },
+  {
+    "name": "Foreman for Real",
+    "file": "Foreman for Real (USA).sfc"
+  },
+  {
+    "name": "Frank Thomas Big Hurt Baseball",
+    "file": "Frank Thomas Big Hurt Baseball (USA).sfc"
+  },
+  {
+    "name": "Frantic Flea",
+    "file": "Frantic Flea (USA).sfc"
+  },
+  {
+    "name": "Frogger",
+    "file": "Frogger (USA).sfc"
+  },
+  {
+    "name": "Full Throttle - All-American Racing",
+    "file": "Full Throttle - All-American Racing (USA).sfc"
+  },
+  {
+    "name": "Fun 'n Games",
+    "file": "Fun 'n Games (USA).sfc"
+  },
+  {
+    "name": "GP-1",
+    "file": "GP-1 (USA).sfc"
+  },
+  {
+    "name": "GP-1 - Part II",
+    "file": "GP-1 - Part II (USA).sfc"
+  },
+  {
+    "name": "Game Genie [b]",
+    "file": "Game Genie (USA) (Alt 1) (Unl) [b].sfc"
+  },
+  {
+    "name": "Game Genie [b]",
+    "file": "Game Genie (USA) (Unl) [b].sfc"
+  },
+  {
+    "name": "Game Genie",
+    "file": "Game Genie (USA) (v2.0) (Unl).sfc"
+  },
+  {
+    "name": "Garry Kitchen's Super Battletank - War in the Gulf",
+    "file": "Garry Kitchen's Super Battletank - War in the Gulf (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Gemfire",
+    "file": "Gemfire (USA).sfc"
+  },
+  {
+    "name": "Genghis Khan II - Clan of the Gray Wolf",
+    "file": "Genghis Khan II - Clan of the Gray Wolf (USA).sfc"
+  },
+  {
+    "name": "George Foreman's KO Boxing",
+    "file": "George Foreman's KO Boxing (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Ghoul Patrol",
+    "file": "Ghoul Patrol (USA).sfc"
+  },
+  {
+    "name": "Goal!",
+    "file": "Goal! (USA).sfc"
+  },
+  {
+    "name": "Gods",
+    "file": "Gods (USA).sfc"
+  },
+  {
+    "name": "Goof Troop",
+    "file": "Goof Troop (USA).sfc"
+  },
+  {
+    "name": "Gradius III",
+    "file": "Gradius III (USA).sfc"
+  },
+  {
+    "name": "Great Circus Mystery Starring Mickey & Minnie, The",
+    "file": "Great Circus Mystery Starring Mickey & Minnie, The (USA).sfc"
+  },
+  {
+    "name": "Great Waldo Search, The",
+    "file": "Great Waldo Search, The (USA).sfc"
+  },
+  {
+    "name": "GunForce",
+    "file": "GunForce (USA).sfc"
+  },
+  {
+    "name": "HAL's Hole in One Golf",
+    "file": "HAL's Hole in One Golf (USA).sfc"
+  },
+  {
+    "name": "Hagane - The Final Conflict",
+    "file": "Hagane - The Final Conflict (USA).sfc"
+  },
+  {
+    "name": "Hammer Lock Wrestling",
+    "file": "Hammer Lock Wrestling (USA).sfc"
+  },
+  {
+    "name": "HardBall III",
+    "file": "HardBall III (USA).sfc"
+  },
+  {
+    "name": "Harley's Humongous Adventure",
+    "file": "Harley's Humongous Adventure (USA).sfc"
+  },
+  {
+    "name": "Harvest Moon",
+    "file": "Harvest Moon (USA).sfc"
+  },
+  {
+    "name": "Head-On Soccer",
+    "file": "Head-On Soccer (USA).sfc"
+  },
+  {
+    "name": "Hind Strike [b]",
+    "file": "Hind Strike (USA) (Unl) [b].sfc"
+  },
+  {
+    "name": "Hit the Ice - VHL - The Official Video Hockey League",
+    "file": "Hit the Ice - VHL - The Official Video Hockey League (USA).sfc"
+  },
+  {
+    "name": "Home Alone",
+    "file": "Home Alone (USA).sfc"
+  },
+  {
+    "name": "Home Alone 2 - Lost in New York",
+    "file": "Home Alone 2 - Lost in New York (USA).sfc"
+  },
+  {
+    "name": "Home Improvement - Power Tool Pursuit!",
+    "file": "Home Improvement - Power Tool Pursuit! (USA).sfc"
+  },
+  {
+    "name": "Hook",
+    "file": "Hook (USA).sfc"
+  },
+  {
+    "name": "Hunt for Red October, The",
+    "file": "Hunt for Red October, The (USA).sfc"
+  },
+  {
+    "name": "Hurricanes",
+    "file": "Hurricanes (USA).sfc"
+  },
+  {
+    "name": "Hyper V-Ball",
+    "file": "Hyper V-Ball (USA).sfc"
+  },
+  {
+    "name": "HyperZone",
+    "file": "HyperZone (USA).sfc"
+  },
+  {
+    "name": "Ignition Factor, The",
+    "file": "Ignition Factor, The (USA).sfc"
+  },
+  {
+    "name": "Illusion of Gaia",
+    "file": "Illusion of Gaia (USA).sfc"
+  },
+  {
+    "name": "Imperium",
+    "file": "Imperium (USA).sfc"
+  },
+  {
+    "name": "Incantation",
+    "file": "Incantation (USA).sfc"
+  },
+  {
+    "name": "Incredible Crash Dummies, The",
+    "file": "Incredible Crash Dummies, The (USA).sfc"
+  },
+  {
+    "name": "Incredible Hulk, The",
+    "file": "Incredible Hulk, The (USA).sfc"
+  },
+  {
+    "name": "Indiana Jones' Greatest Adventures",
+    "file": "Indiana Jones' Greatest Adventures (USA).sfc"
+  },
+  {
+    "name": "Inindo - Way of the Ninja",
+    "file": "Inindo - Way of the Ninja (USA).sfc"
+  },
+  {
+    "name": "Inspector Gadget",
+    "file": "Inspector Gadget (USA).sfc"
+  },
+  {
+    "name": "International Superstar Soccer",
+    "file": "International Superstar Soccer (USA).sfc"
+  },
+  {
+    "name": "International Superstar Soccer Deluxe",
+    "file": "International Superstar Soccer Deluxe (USA).sfc"
+  },
+  {
+    "name": "International Tennis Tour",
+    "file": "International Tennis Tour (USA).sfc"
+  },
+  {
+    "name": "Irem Skins Game, The",
+    "file": "Irem Skins Game, The (USA) (Arcade).sfc"
+  },
+  {
+    "name": "Irem Skins Game, The",
+    "file": "Irem Skins Game, The (USA).sfc"
+  },
+  {
+    "name": "Itchy & Scratchy Game, The",
+    "file": "Itchy & Scratchy Game, The (USA).sfc"
+  },
+  {
+    "name": "Izzy's Quest for the Olympic Rings",
+    "file": "Izzy's Quest for the Olympic Rings (USA).sfc"
+  },
+  {
+    "name": "J.R.R. Tolkien's The Lord of the Rings - Volume 1",
+    "file": "J.R.R. Tolkien's The Lord of the Rings - Volume 1 (USA).sfc"
+  },
+  {
+    "name": "Jack Nicklaus Golf",
+    "file": "Jack Nicklaus Golf (USA).sfc"
+  },
+  {
+    "name": "James Bond Jr",
+    "file": "James Bond Jr (USA).sfc"
+  },
+  {
+    "name": "Jeff's Shoot'Em Up",
+    "file": "Jeff's Shoot'Em Up (USA) (Proto).sfc"
+  },
+  {
+    "name": "Jeopardy!",
+    "file": "Jeopardy! (USA).sfc"
+  },
+  {
+    "name": "Jeopardy! - Deluxe Edition",
+    "file": "Jeopardy! - Deluxe Edition (USA).sfc"
+  },
+  {
+    "name": "Jeopardy! - Sports Edition",
+    "file": "Jeopardy! - Sports Edition (USA).sfc"
+  },
+  {
+    "name": "Jetsons, The - Invasion of the Planet Pirates",
+    "file": "Jetsons, The - Invasion of the Planet Pirates (USA).sfc"
+  },
+  {
+    "name": "Jim Lee's WildC.A.T.S - Covert-Action-Teams",
+    "file": "Jim Lee's WildC.A.T.S - Covert-Action-Teams (USA).sfc"
+  },
+  {
+    "name": "Jim Power - The Lost Dimension in 3D",
+    "file": "Jim Power - The Lost Dimension in 3D (USA).sfc"
+  },
+  {
+    "name": "Jimmy Connors Pro Tennis Tour",
+    "file": "Jimmy Connors Pro Tennis Tour (USA).sfc"
+  },
+  {
+    "name": "Jimmy Houston's Bass Tournament U.S.A.",
+    "file": "Jimmy Houston's Bass Tournament U.S.A. (USA).sfc"
+  },
+  {
+    "name": "Joe & Mac",
+    "file": "Joe & Mac (USA).sfc"
+  },
+  {
+    "name": "Joe & Mac 2 - Lost in the Tropics",
+    "file": "Joe & Mac 2 - Lost in the Tropics (USA).sfc"
+  },
+  {
+    "name": "John Madden Football '93",
+    "file": "John Madden Football '93 (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "John Madden Football",
+    "file": "John Madden Football (USA).sfc"
+  },
+  {
+    "name": "Judge Dredd",
+    "file": "Judge Dredd (USA).sfc"
+  },
+  {
+    "name": "Jungle Book, The",
+    "file": "Jungle Book, The (USA).sfc"
+  },
+  {
+    "name": "Jungle Strike",
+    "file": "Jungle Strike (USA).sfc"
+  },
+  {
+    "name": "Jurassic Park",
+    "file": "Jurassic Park (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Jurassic Park Part 2 - The Chaos Continues",
+    "file": "Jurassic Park Part 2 - The Chaos Continues (USA) (En,Fr,De,It).sfc"
+  },
+  {
+    "name": "Justice League Task Force",
+    "file": "Justice League Task Force (USA).sfc"
+  },
+  {
+    "name": "Ka-blooey",
+    "file": "Ka-blooey (USA).sfc"
+  },
+  {
+    "name": "Kawasaki Caribbean Challenge",
+    "file": "Kawasaki Caribbean Challenge (USA).sfc"
+  },
+  {
+    "name": "Kawasaki Superbike Challenge",
+    "file": "Kawasaki Superbike Challenge (USA).sfc"
+  },
+  {
+    "name": "Ken Griffey Jr. Presents Major League Baseball",
+    "file": "Ken Griffey Jr. Presents Major League Baseball (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Ken Griffey Jr.'s Winning Run",
+    "file": "Ken Griffey Jr.'s Winning Run (USA).sfc"
+  },
+  {
+    "name": "Kendo Rage",
+    "file": "Kendo Rage (USA).sfc"
+  },
+  {
+    "name": "Kid Klown in Crazy Chase",
+    "file": "Kid Klown in Crazy Chase (USA).sfc"
+  },
+  {
+    "name": "Killer Instinct",
+    "file": "Killer Instinct (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "King Arthur & The Knights of Justice",
+    "file": "King Arthur & The Knights of Justice (USA).sfc"
+  },
+  {
+    "name": "King Arthur's World",
+    "file": "King Arthur's World (USA).sfc"
+  },
+  {
+    "name": "King of Dragons",
+    "file": "King of Dragons (USA).sfc"
+  },
+  {
+    "name": "King of the Monsters",
+    "file": "King of the Monsters (USA).sfc"
+  },
+  {
+    "name": "King of the Monsters 2",
+    "file": "King of the Monsters 2 (USA).sfc"
+  },
+  {
+    "name": "Kirby Super Star",
+    "file": "Kirby Super Star (USA).sfc"
+  },
+  {
+    "name": "Kirby's Avalanche",
+    "file": "Kirby's Avalanche (USA).sfc"
+  },
+  {
+    "name": "Kirby's Dream Course",
+    "file": "Kirby's Dream Course (USA).sfc"
+  },
+  {
+    "name": "Kirby's Dream Land 3",
+    "file": "Kirby's Dream Land 3 (USA).sfc"
+  },
+  {
+    "name": "Knights of the Round",
+    "file": "Knights of the Round (USA).sfc"
+  },
+  {
+    "name": "Krusty's Super Fun House",
+    "file": "Krusty's Super Fun House (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Kyle Petty's No Fear Racing",
+    "file": "Kyle Petty's No Fear Racing (USA).sfc"
+  },
+  {
+    "name": "Lagoon",
+    "file": "Lagoon (USA).sfc"
+  },
+  {
+    "name": "Lamborghini American Challenge",
+    "file": "Lamborghini American Challenge (USA).sfc"
+  },
+  {
+    "name": "Last Action Hero",
+    "file": "Last Action Hero (USA).sfc"
+  },
+  {
+    "name": "Lawnmower Man, The",
+    "file": "Lawnmower Man, The (USA).sfc"
+  },
+  {
+    "name": "Legend",
+    "file": "Legend (USA).sfc"
+  },
+  {
+    "name": "Legend of Zelda, The - A Link to the Past",
+    "file": "Legend of Zelda, The - A Link to the Past (USA).sfc"
+  },
+  {
+    "name": "Legend of the Mystical Ninja, The",
+    "file": "Legend of the Mystical Ninja, The (USA).sfc"
+  },
+  {
+    "name": "Lemmings",
+    "file": "Lemmings (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Lemmings 2 - The Tribes",
+    "file": "Lemmings 2 - The Tribes (USA).sfc"
+  },
+  {
+    "name": "Lester the Unlikely",
+    "file": "Lester the Unlikely (USA).sfc"
+  },
+  {
+    "name": "Lethal Enforcers",
+    "file": "Lethal Enforcers (USA).sfc"
+  },
+  {
+    "name": "Lethal Weapon",
+    "file": "Lethal Weapon (USA) (Arcade).sfc"
+  },
+  {
+    "name": "Lethal Weapon",
+    "file": "Lethal Weapon (USA).sfc"
+  },
+  {
+    "name": "Liberty or Death",
+    "file": "Liberty or Death (USA).sfc"
+  },
+  {
+    "name": "Lion King, The",
+    "file": "Lion King, The (USA).sfc"
+  },
+  {
+    "name": "Lobo",
+    "file": "Lobo (USA) (Proto).sfc"
+  },
+  {
+    "name": "Lock On",
+    "file": "Lock On (USA).sfc"
+  },
+  {
+    "name": "Looney Tunes B-Ball",
+    "file": "Looney Tunes B-Ball (USA).sfc"
+  },
+  {
+    "name": "Lord of Darkness",
+    "file": "Lord of Darkness (USA).sfc"
+  },
+  {
+    "name": "Lost Vikings 2",
+    "file": "Lost Vikings 2 (USA).sfc"
+  },
+  {
+    "name": "Lost Vikings, The",
+    "file": "Lost Vikings, The (USA).sfc"
+  },
+  {
+    "name": "Lufia & the Fortress of Doom",
+    "file": "Lufia & the Fortress of Doom (USA).sfc"
+  },
+  {
+    "name": "Lufia II - Rise of the Sinistrals",
+    "file": "Lufia II - Rise of the Sinistrals (USA).sfc"
+  },
+  {
+    "name": "M.A.C.S. Basic Rifle Marksmanship [b]",
+    "file": "M.A.C.S. Basic Rifle Marksmanship (USA) [b].sfc"
+  },
+  {
+    "name": "MLBPA Baseball",
+    "file": "MLBPA Baseball (USA).sfc"
+  },
+  {
+    "name": "Madden NFL '94",
+    "file": "Madden NFL '94 (USA).sfc"
+  },
+  {
+    "name": "Madden NFL 95",
+    "file": "Madden NFL 95 (USA).sfc"
+  },
+  {
+    "name": "Madden NFL 96",
+    "file": "Madden NFL 96 (USA).sfc"
+  },
+  {
+    "name": "Madden NFL 97",
+    "file": "Madden NFL 97 (USA).sfc"
+  },
+  {
+    "name": "Madden NFL 98",
+    "file": "Madden NFL 98 (USA).sfc"
+  },
+  {
+    "name": "Magic Boy",
+    "file": "Magic Boy (USA).sfc"
+  },
+  {
+    "name": "Magic Sword",
+    "file": "Magic Sword (USA).sfc"
+  },
+  {
+    "name": "Magical Quest Starring Mickey Mouse, The",
+    "file": "Magical Quest Starring Mickey Mouse, The (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Mario Is Missing!",
+    "file": "Mario Is Missing! (USA).sfc"
+  },
+  {
+    "name": "Mario's Early Years - Fun with Letters",
+    "file": "Mario's Early Years - Fun with Letters (USA).sfc"
+  },
+  {
+    "name": "Mario's Early Years - Fun with Numbers",
+    "file": "Mario's Early Years - Fun with Numbers (USA).sfc"
+  },
+  {
+    "name": "Mario's Early Years - Preschool Fun",
+    "file": "Mario's Early Years - Preschool Fun (USA).sfc"
+  },
+  {
+    "name": "Mario's Time Machine",
+    "file": "Mario's Time Machine (USA).sfc"
+  },
+  {
+    "name": "Mark Davis' The Fishing Master",
+    "file": "Mark Davis' The Fishing Master (USA).sfc"
+  },
+  {
+    "name": "Marvel Super Heroes in War of the Gems",
+    "file": "Marvel Super Heroes in War of the Gems (USA).sfc"
+  },
+  {
+    "name": "Mary Shelley's Frankenstein",
+    "file": "Mary Shelley's Frankenstein (USA).sfc"
+  },
+  {
+    "name": "Mask, The",
+    "file": "Mask, The (USA).sfc"
+  },
+  {
+    "name": "Math Blaster - Episode 1",
+    "file": "Math Blaster - Episode 1 (USA).sfc"
+  },
+  {
+    "name": "Maui Mallard in Cold Shadow",
+    "file": "Maui Mallard in Cold Shadow (USA).sfc"
+  },
+  {
+    "name": "Mecarobot Golf",
+    "file": "Mecarobot Golf (USA).sfc"
+  },
+  {
+    "name": "MechWarrior",
+    "file": "MechWarrior (USA).sfc"
+  },
+  {
+    "name": "MechWarrior 3050",
+    "file": "MechWarrior 3050 (USA).sfc"
+  },
+  {
+    "name": "Mega Man 7",
+    "file": "Mega Man 7 (USA).sfc"
+  },
+  {
+    "name": "Mega Man Soccer",
+    "file": "Mega Man Soccer (USA).sfc"
+  },
+  {
+    "name": "Mega Man X",
+    "file": "Mega Man X (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Mega Man X2",
+    "file": "Mega Man X2 (USA).sfc"
+  },
+  {
+    "name": "Mega Man X3",
+    "file": "Mega Man X3 (USA).sfc"
+  },
+  {
+    "name": "Metal Combat - Falcon's Revenge",
+    "file": "Metal Combat - Falcon's Revenge (USA).sfc"
+  },
+  {
+    "name": "Metal Jack",
+    "file": "Metal Jack (USA) (Proto) (1992-07-30).sfc"
+  },
+  {
+    "name": "Metal Marines",
+    "file": "Metal Marines (USA).sfc"
+  },
+  {
+    "name": "Metal Morph",
+    "file": "Metal Morph (USA).sfc"
+  },
+  {
+    "name": "Metal Warriors",
+    "file": "Metal Warriors (USA).sfc"
+  },
+  {
+    "name": "Michael Andretti's IndyCar Challenge",
+    "file": "Michael Andretti's IndyCar Challenge (USA).sfc"
+  },
+  {
+    "name": "Michael Jordan - Chaos in the Windy City",
+    "file": "Michael Jordan - Chaos in the Windy City (USA).sfc"
+  },
+  {
+    "name": "Mick & Mack as the Global Gladiators [b]",
+    "file": "Mick & Mack as the Global Gladiators (USA) (Proto) [b].sfc"
+  },
+  {
+    "name": "Mickey Mania - The Timeless Adventures of Mickey Mouse",
+    "file": "Mickey Mania - The Timeless Adventures of Mickey Mouse (USA).sfc"
+  },
+  {
+    "name": "Mickey's Playtown Adventure - A Day of Discovery!",
+    "file": "Mickey's Playtown Adventure - A Day of Discovery! (USA) (Proto).sfc"
+  },
+  {
+    "name": "Mickey's Ultimate Challenge",
+    "file": "Mickey's Ultimate Challenge (USA).sfc"
+  },
+  {
+    "name": "Micro Machines",
+    "file": "Micro Machines (USA).sfc"
+  },
+  {
+    "name": "Might and Magic II",
+    "file": "Might and Magic II (USA) (Proto).sfc"
+  },
+  {
+    "name": "Might and Magic III - Isles of Terra",
+    "file": "Might and Magic III - Isles of Terra (USA).sfc"
+  },
+  {
+    "name": "Mighty Max",
+    "file": "Mighty Max (USA).sfc"
+  },
+  {
+    "name": "Mighty Morphin Power Rangers",
+    "file": "Mighty Morphin Power Rangers (USA).sfc"
+  },
+  {
+    "name": "Mighty Morphin Power Rangers - The Fighting Edition",
+    "file": "Mighty Morphin Power Rangers - The Fighting Edition (USA).sfc"
+  },
+  {
+    "name": "Mighty Morphin Power Rangers - The Movie",
+    "file": "Mighty Morphin Power Rangers - The Movie (USA).sfc"
+  },
+  {
+    "name": "Miracle Piano Teaching System, The",
+    "file": "Miracle Piano Teaching System, The (USA).sfc"
+  },
+  {
+    "name": "Mohawk & Headphone Jack",
+    "file": "Mohawk & Headphone Jack (USA).sfc"
+  },
+  {
+    "name": "Monopoly",
+    "file": "Monopoly (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Mortal Kombat",
+    "file": "Mortal Kombat (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Mortal Kombat 3",
+    "file": "Mortal Kombat 3 (USA).sfc"
+  },
+  {
+    "name": "Mortal Kombat II",
+    "file": "Mortal Kombat II (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Mr. Bloopy - Saves the World",
+    "file": "Mr. Bloopy - Saves the World (USA) (Proto) (1995-02-16).sfc"
+  },
+  {
+    "name": "Mr. Do!",
+    "file": "Mr. Do! (USA).sfc"
+  },
+  {
+    "name": "Mr. Nutz",
+    "file": "Mr. Nutz (USA) (En,Fr).sfc"
+  },
+  {
+    "name": "Ms. Pac-Man",
+    "file": "Ms. Pac-Man (USA).sfc"
+  },
+  {
+    "name": "Muhammad Ali Heavyweight Boxing",
+    "file": "Muhammad Ali Heavyweight Boxing (USA) (Proto).sfc"
+  },
+  {
+    "name": "Musya - The Classic Japanese Tale of Horror",
+    "file": "Musya - The Classic Japanese Tale of Horror (USA).sfc"
+  },
+  {
+    "name": "NBA All-Star Challenge",
+    "file": "NBA All-Star Challenge (USA).sfc"
+  },
+  {
+    "name": "NBA Give 'n Go",
+    "file": "NBA Give 'n Go (USA).sfc"
+  },
+  {
+    "name": "NBA Hang Time",
+    "file": "NBA Hang Time (USA).sfc"
+  },
+  {
+    "name": "NBA Jam",
+    "file": "NBA Jam (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "NBA Jam - Tournament Edition",
+    "file": "NBA Jam - Tournament Edition (USA).sfc"
+  },
+  {
+    "name": "NBA Live 95",
+    "file": "NBA Live 95 (USA).sfc"
+  },
+  {
+    "name": "NBA Live 96",
+    "file": "NBA Live 96 (USA).sfc"
+  },
+  {
+    "name": "NBA Live 97",
+    "file": "NBA Live 97 (USA).sfc"
+  },
+  {
+    "name": "NBA Live 98",
+    "file": "NBA Live 98 (USA).sfc"
+  },
+  {
+    "name": "NBA Showdown",
+    "file": "NBA Showdown (USA).sfc"
+  },
+  {
+    "name": "NCAA Basketball",
+    "file": "NCAA Basketball (USA) (Arcade).sfc"
+  },
+  {
+    "name": "NCAA Basketball",
+    "file": "NCAA Basketball (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "NCAA Final Four Basketball",
+    "file": "NCAA Final Four Basketball (USA).sfc"
+  },
+  {
+    "name": "NCAA Football",
+    "file": "NCAA Football (USA).sfc"
+  },
+  {
+    "name": "NFL Football",
+    "file": "NFL Football (USA) (Proto).sfc"
+  },
+  {
+    "name": "NFL Football",
+    "file": "NFL Football (USA).sfc"
+  },
+  {
+    "name": "NFL Quarterback Club",
+    "file": "NFL Quarterback Club (USA).sfc"
+  },
+  {
+    "name": "NFL Quarterback Club 96",
+    "file": "NFL Quarterback Club 96 (USA).sfc"
+  },
+  {
+    "name": "NHL '94",
+    "file": "NHL '94 (USA).sfc"
+  },
+  {
+    "name": "NHL 95",
+    "file": "NHL 95 (USA).sfc"
+  },
+  {
+    "name": "NHL 96",
+    "file": "NHL 96 (USA).sfc"
+  },
+  {
+    "name": "NHL 97",
+    "file": "NHL 97 (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "NHL 98",
+    "file": "NHL 98 (USA).sfc"
+  },
+  {
+    "name": "NHL Stanley Cup",
+    "file": "NHL Stanley Cup (USA) (En,Fr).sfc"
+  },
+  {
+    "name": "NHLPA Hockey 93",
+    "file": "NHLPA Hockey 93 (USA).sfc"
+  },
+  {
+    "name": "Natsume Championship Wrestling",
+    "file": "Natsume Championship Wrestling (USA).sfc"
+  },
+  {
+    "name": "New Horizons",
+    "file": "New Horizons (USA).sfc"
+  },
+  {
+    "name": "Newman Haas IndyCar featuring Nigel Mansell",
+    "file": "Newman Haas IndyCar featuring Nigel Mansell (USA).sfc"
+  },
+  {
+    "name": "Nickelodeon GUTS",
+    "file": "Nickelodeon GUTS (USA).sfc"
+  },
+  {
+    "name": "Nigel Mansell's World Championship Racing",
+    "file": "Nigel Mansell's World Championship Racing (USA).sfc"
+  },
+  {
+    "name": "Nightmare Busters",
+    "file": "Nightmare Busters (USA) (Unl).sfc"
+  },
+  {
+    "name": "Ninja Gaiden Trilogy",
+    "file": "Ninja Gaiden Trilogy (USA).sfc"
+  },
+  {
+    "name": "Ninjawarriors",
+    "file": "Ninjawarriors (USA).sfc"
+  },
+  {
+    "name": "No Escape",
+    "file": "No Escape (USA).sfc"
+  },
+  {
+    "name": "Nobunaga's Ambition",
+    "file": "Nobunaga's Ambition (USA).sfc"
+  },
+  {
+    "name": "Nolan Ryan's Baseball",
+    "file": "Nolan Ryan's Baseball (USA).sfc"
+  },
+  {
+    "name": "Nosferatu",
+    "file": "Nosferatu (USA).sfc"
+  },
+  {
+    "name": "Obitus",
+    "file": "Obitus (USA).sfc"
+  },
+  {
+    "name": "Ogre Battle - The March of the Black Queen",
+    "file": "Ogre Battle - The March of the Black Queen (USA).sfc"
+  },
+  {
+    "name": "Olympic Summer Games",
+    "file": "Olympic Summer Games (USA).sfc"
+  },
+  {
+    "name": "On the Ball",
+    "file": "On the Ball (USA).sfc"
+  },
+  {
+    "name": "Operation Europe - Path to Victory 1939-45",
+    "file": "Operation Europe - Path to Victory 1939-45 (USA).sfc"
+  },
+  {
+    "name": "Operation Logic Bomb - The Ultimate Search & Destroy",
+    "file": "Operation Logic Bomb - The Ultimate Search & Destroy (USA).sfc"
+  },
+  {
+    "name": "Operation Thunderbolt",
+    "file": "Operation Thunderbolt (USA).sfc"
+  },
+  {
+    "name": "Oscar",
+    "file": "Oscar (USA).sfc"
+  },
+  {
+    "name": "Out of this World",
+    "file": "Out of this World (USA).sfc"
+  },
+  {
+    "name": "Out to Lunch",
+    "file": "Out to Lunch (USA).sfc"
+  },
+  {
+    "name": "Outlander",
+    "file": "Outlander (USA).sfc"
+  },
+  {
+    "name": "P.T.O. - Pacific Theater of Operations",
+    "file": "P.T.O. - Pacific Theater of Operations (USA).sfc"
+  },
+  {
+    "name": "P.T.O. II - Pacific Theater of Operations",
+    "file": "P.T.O. II - Pacific Theater of Operations (USA).sfc"
+  },
+  {
+    "name": "PGA European Tour",
+    "file": "PGA European Tour (USA).sfc"
+  },
+  {
+    "name": "PGA Tour 96",
+    "file": "PGA Tour 96 (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "PGA Tour Golf",
+    "file": "PGA Tour Golf (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Pac-Attack",
+    "file": "Pac-Attack (USA).sfc"
+  },
+  {
+    "name": "Pac-In-Time",
+    "file": "Pac-In-Time (USA).sfc"
+  },
+  {
+    "name": "Pac-Man 2 - The New Adventures",
+    "file": "Pac-Man 2 - The New Adventures (USA).sfc"
+  },
+  {
+    "name": "Packy & Marlon",
+    "file": "Packy & Marlon (USA) (En,Fr,Es).sfc"
+  },
+  {
+    "name": "Pagemaster, The",
+    "file": "Pagemaster, The (USA).sfc"
+  },
+  {
+    "name": "Paladin's Quest",
+    "file": "Paladin's Quest (USA).sfc"
+  },
+  {
+    "name": "Paperboy 2",
+    "file": "Paperboy 2 (USA).sfc"
+  },
+  {
+    "name": "Peace Keepers, The",
+    "file": "Peace Keepers, The (USA).sfc"
+  },
+  {
+    "name": "Phalanx",
+    "file": "Phalanx (USA).sfc"
+  },
+  {
+    "name": "Phantom 2040",
+    "file": "Phantom 2040 (USA).sfc"
+  },
+  {
+    "name": "Pieces",
+    "file": "Pieces (USA).sfc"
+  },
+  {
+    "name": "Pilotwings",
+    "file": "Pilotwings (USA).sfc"
+  },
+  {
+    "name": "Pinball Dreams",
+    "file": "Pinball Dreams (USA).sfc"
+  },
+  {
+    "name": "Pinball Fantasies",
+    "file": "Pinball Fantasies (USA).sfc"
+  },
+  {
+    "name": "Pink Goes to Hollywood",
+    "file": "Pink Goes to Hollywood (USA).sfc"
+  },
+  {
+    "name": "Pinocchio",
+    "file": "Pinocchio (USA).sfc"
+  },
+  {
+    "name": "Pirates of Dark Water, The",
+    "file": "Pirates of Dark Water, The (USA).sfc"
+  },
+  {
+    "name": "Pit-Fighter",
+    "file": "Pit-Fighter (USA).sfc"
+  },
+  {
+    "name": "Pitfall - The Mayan Adventure",
+    "file": "Pitfall - The Mayan Adventure (USA).sfc"
+  },
+  {
+    "name": "Plok",
+    "file": "Plok (USA).sfc"
+  },
+  {
+    "name": "Pocky & Rocky",
+    "file": "Pocky & Rocky (USA).sfc"
+  },
+  {
+    "name": "Pocky & Rocky 2",
+    "file": "Pocky & Rocky 2 (USA).sfc"
+  },
+  {
+    "name": "Populous",
+    "file": "Populous (USA).sfc"
+  },
+  {
+    "name": "Porky Pig's Haunted Holiday",
+    "file": "Porky Pig's Haunted Holiday (USA).sfc"
+  },
+  {
+    "name": "Power Drive",
+    "file": "Power Drive (USA) (En,Fr,De,Es,Pt) (Proto).sfc"
+  },
+  {
+    "name": "Power Instinct",
+    "file": "Power Instinct (USA).sfc"
+  },
+  {
+    "name": "Power Moves",
+    "file": "Power Moves (USA).sfc"
+  },
+  {
+    "name": "Power Piggs of the Dark Age",
+    "file": "Power Piggs of the Dark Age (USA).sfc"
+  },
+  {
+    "name": "Power Rangers Zeo - Battle Racers",
+    "file": "Power Rangers Zeo - Battle Racers (USA).sfc"
+  },
+  {
+    "name": "PowerFest 94",
+    "file": "PowerFest 94 (USA).sfc"
+  },
+  {
+    "name": "Prehistorik Man",
+    "file": "Prehistorik Man (USA) (En,Fr,Es).sfc"
+  },
+  {
+    "name": "Primal Rage",
+    "file": "Primal Rage (USA).sfc"
+  },
+  {
+    "name": "Prime",
+    "file": "Prime (USA) (Proto).sfc"
+  },
+  {
+    "name": "Prince of Persia",
+    "file": "Prince of Persia (USA).sfc"
+  },
+  {
+    "name": "Prince of Persia 2",
+    "file": "Prince of Persia 2 (USA).sfc"
+  },
+  {
+    "name": "Pro Quarterback",
+    "file": "Pro Quarterback (USA).sfc"
+  },
+  {
+    "name": "Pro Sport Hockey",
+    "file": "Pro Sport Hockey (USA).sfc"
+  },
+  {
+    "name": "Push-Over",
+    "file": "Push-Over (USA).sfc"
+  },
+  {
+    "name": "Q-bert 3",
+    "file": "Q-bert 3 (USA).sfc"
+  },
+  {
+    "name": "R-Type III",
+    "file": "R-Type III (USA).sfc"
+  },
+  {
+    "name": "RHI Roller Hockey '95",
+    "file": "RHI Roller Hockey '95 (USA) (Proto).sfc"
+  },
+  {
+    "name": "Race Drivin'",
+    "file": "Race Drivin' (USA).sfc"
+  },
+  {
+    "name": "Radical Psycho Machine Racing",
+    "file": "Radical Psycho Machine Racing (USA).sfc"
+  },
+  {
+    "name": "Radical Rex",
+    "file": "Radical Rex (USA).sfc"
+  },
+  {
+    "name": "Raiden Trad",
+    "file": "Raiden Trad (USA).sfc"
+  },
+  {
+    "name": "Rally - The Final Round of the World Rally Championship",
+    "file": "Rally - The Final Round of the World Rally Championship (USA) (Proto).sfc"
+  },
+  {
+    "name": "Rampart",
+    "file": "Rampart (USA).sfc"
+  },
+  {
+    "name": "Ranma 1-2 - Hard Battle",
+    "file": "Ranma 1-2 - Hard Battle (USA).sfc"
+  },
+  {
+    "name": "Rap Basketball",
+    "file": "Rap Basketball (USA) (Proto).sfc"
+  },
+  {
+    "name": "Rap Jam - Volume One",
+    "file": "Rap Jam - Volume One (USA) (En,Fr,Es).sfc"
+  },
+  {
+    "name": "Rayman",
+    "file": "Rayman (USA) (Proto).sfc"
+  },
+  {
+    "name": "Realm",
+    "file": "Realm (USA).sfc"
+  },
+  {
+    "name": "Redline F-1 Racer",
+    "file": "Redline F-1 Racer (USA).sfc"
+  },
+  {
+    "name": "Relief Pitcher",
+    "file": "Relief Pitcher (USA).sfc"
+  },
+  {
+    "name": "Ren & Stimpy Show, The - Buckeroo$!",
+    "file": "Ren & Stimpy Show, The - Buckeroo$! (USA).sfc"
+  },
+  {
+    "name": "Ren & Stimpy Show, The - Fire Dogs",
+    "file": "Ren & Stimpy Show, The - Fire Dogs (USA).sfc"
+  },
+  {
+    "name": "Ren & Stimpy Show, The - Time Warp",
+    "file": "Ren & Stimpy Show, The - Time Warp (USA).sfc"
+  },
+  {
+    "name": "Ren & Stimpy Show, The - Veediots!",
+    "file": "Ren & Stimpy Show, The - Veediots! (USA).sfc"
+  },
+  {
+    "name": "Revolution X",
+    "file": "Revolution X (USA).sfc"
+  },
+  {
+    "name": "Rex Ronan - Experimental Surgeon",
+    "file": "Rex Ronan - Experimental Surgeon (USA) (En,Es).sfc"
+  },
+  {
+    "name": "Riddick Bowe Boxing",
+    "file": "Riddick Bowe Boxing (USA).sfc"
+  },
+  {
+    "name": "Rise of the Phoenix",
+    "file": "Rise of the Phoenix (USA).sfc"
+  },
+  {
+    "name": "Rise of the Robots",
+    "file": "Rise of the Robots (USA).sfc"
+  },
+  {
+    "name": "Rival Turf!",
+    "file": "Rival Turf! (USA).sfc"
+  },
+  {
+    "name": "Road Riot 4WD",
+    "file": "Road Riot 4WD (USA).sfc"
+  },
+  {
+    "name": "Road Runner's Death Valley Rally",
+    "file": "Road Runner's Death Valley Rally (USA).sfc"
+  },
+  {
+    "name": "RoboCop 3",
+    "file": "RoboCop 3 (USA) (Arcade).sfc"
+  },
+  {
+    "name": "RoboCop 3",
+    "file": "RoboCop 3 (USA).sfc"
+  },
+  {
+    "name": "RoboCop versus The Terminator",
+    "file": "RoboCop versus The Terminator (USA).sfc"
+  },
+  {
+    "name": "Robotrek",
+    "file": "Robotrek (USA).sfc"
+  },
+  {
+    "name": "Rock n' Roll Racing",
+    "file": "Rock n' Roll Racing (USA).sfc"
+  },
+  {
+    "name": "Rocketeer, The",
+    "file": "Rocketeer, The (USA).sfc"
+  },
+  {
+    "name": "Rocko's Modern Life - Spunky's Dangerous Day",
+    "file": "Rocko's Modern Life - Spunky's Dangerous Day (USA).sfc"
+  },
+  {
+    "name": "Rocky Rodent",
+    "file": "Rocky Rodent (USA).sfc"
+  },
+  {
+    "name": "Roger Clemens' MVP Baseball",
+    "file": "Roger Clemens' MVP Baseball (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Romance of the Three Kingdoms II",
+    "file": "Romance of the Three Kingdoms II (USA).sfc"
+  },
+  {
+    "name": "Romance of the Three Kingdoms III - Dragon of Destiny",
+    "file": "Romance of the Three Kingdoms III - Dragon of Destiny (USA).sfc"
+  },
+  {
+    "name": "Romance of the Three Kingdoms IV - Wall of Fire",
+    "file": "Romance of the Three Kingdoms IV - Wall of Fire (USA).sfc"
+  },
+  {
+    "name": "Run Saber",
+    "file": "Run Saber (USA).sfc"
+  },
+  {
+    "name": "S.O.S - Sink or Swim",
+    "file": "S.O.S - Sink or Swim (USA).sfc"
+  },
+  {
+    "name": "SNES Burn-in Test Cartridge",
+    "file": "SNES Burn-in Test Cartridge (USA) (Rev D).sfc"
+  },
+  {
+    "name": "SOS",
+    "file": "SOS (USA).sfc"
+  },
+  {
+    "name": "SWAT Kats - The Radical Squadron",
+    "file": "SWAT Kats - The Radical Squadron (USA).sfc"
+  },
+  {
+    "name": "Samurai Shodown",
+    "file": "Samurai Shodown (USA).sfc"
+  },
+  {
+    "name": "Saturday Night Slam Masters",
+    "file": "Saturday Night Slam Masters (USA).sfc"
+  },
+  {
+    "name": "Scooby-Doo Mystery",
+    "file": "Scooby-Doo Mystery (USA).sfc"
+  },
+  {
+    "name": "Secret of Evermore",
+    "file": "Secret of Evermore (USA).sfc"
+  },
+  {
+    "name": "Secret of Mana",
+    "file": "Secret of Mana (USA).sfc"
+  },
+  {
+    "name": "Shadow, The",
+    "file": "Shadow, The (USA) (Proto 1).sfc"
+  },
+  {
+    "name": "Shadow, The",
+    "file": "Shadow, The (USA) (Proto 2).sfc"
+  },
+  {
+    "name": "Shadowhawk",
+    "file": "Shadowhawk (USA) (Proto).sfc"
+  },
+  {
+    "name": "Shadowrun",
+    "file": "Shadowrun (USA).sfc"
+  },
+  {
+    "name": "Shanghai II - Dragon's Eye",
+    "file": "Shanghai II - Dragon's Eye (USA).sfc"
+  },
+  {
+    "name": "Shaq-Fu",
+    "file": "Shaq-Fu (USA).sfc"
+  },
+  {
+    "name": "Shien's Revenge",
+    "file": "Shien's Revenge (USA).sfc"
+  },
+  {
+    "name": "Shooter",
+    "file": "Shooter (USA) (Proto).sfc"
+  },
+  {
+    "name": "Sid Meier's Civilization",
+    "file": "Sid Meier's Civilization (USA).sfc"
+  },
+  {
+    "name": "Side Pocket",
+    "file": "Side Pocket (USA).sfc"
+  },
+  {
+    "name": "SimAnt - The Electronic Ant Colony",
+    "file": "SimAnt - The Electronic Ant Colony (USA).sfc"
+  },
+  {
+    "name": "SimCity",
+    "file": "SimCity (USA).sfc"
+  },
+  {
+    "name": "SimCity 2000 - The Ultimate City Simulator",
+    "file": "SimCity 2000 - The Ultimate City Simulator (USA).sfc"
+  },
+  {
+    "name": "SimEarth - The Living Planet",
+    "file": "SimEarth - The Living Planet (USA).sfc"
+  },
+  {
+    "name": "Simpsons, The - Bart's Nightmare",
+    "file": "Simpsons, The - Bart's Nightmare (USA).sfc"
+  },
+  {
+    "name": "Skuljagger - Revolt of the Westicans",
+    "file": "Skuljagger - Revolt of the Westicans (USA).sfc"
+  },
+  {
+    "name": "Skyblazer",
+    "file": "Skyblazer (USA).sfc"
+  },
+  {
+    "name": "Smart Ball",
+    "file": "Smart Ball (USA).sfc"
+  },
+  {
+    "name": "Snow White in Happily Ever After",
+    "file": "Snow White in Happily Ever After (USA).sfc"
+  },
+  {
+    "name": "Soldiers of Fortune",
+    "file": "Soldiers of Fortune (USA).sfc"
+  },
+  {
+    "name": "Sonic Blast Man",
+    "file": "Sonic Blast Man (USA).sfc"
+  },
+  {
+    "name": "Sonic Blast Man II",
+    "file": "Sonic Blast Man II (USA).sfc"
+  },
+  {
+    "name": "Soul Blazer",
+    "file": "Soul Blazer (USA).sfc"
+  },
+  {
+    "name": "Space Ace",
+    "file": "Space Ace (USA).sfc"
+  },
+  {
+    "name": "Space Football - One on One",
+    "file": "Space Football - One on One (USA).sfc"
+  },
+  {
+    "name": "Space Invaders",
+    "file": "Space Invaders (USA).sfc"
+  },
+  {
+    "name": "Space Megaforce",
+    "file": "Space Megaforce (USA).sfc"
+  },
+  {
+    "name": "Spanky's Quest",
+    "file": "Spanky's Quest (USA).sfc"
+  },
+  {
+    "name": "Sparkster",
+    "file": "Sparkster (USA).sfc"
+  },
+  {
+    "name": "Spectre",
+    "file": "Spectre (USA).sfc"
+  },
+  {
+    "name": "Speed Racer",
+    "file": "Speed Racer (USA).sfc"
+  },
+  {
+    "name": "Speedy Gonzales - Los Gatos Bandidos",
+    "file": "Speedy Gonzales - Los Gatos Bandidos (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "SpellCraft - Aspects of Valor",
+    "file": "SpellCraft - Aspects of Valor (USA) (Proto).sfc"
+  },
+  {
+    "name": "Spider-Man",
+    "file": "Spider-Man (USA).sfc"
+  },
+  {
+    "name": "Spider-Man - Venom - Maximum Carnage",
+    "file": "Spider-Man - Venom - Maximum Carnage (USA).sfc"
+  },
+  {
+    "name": "Spider-Man - X-Men - Arcade's Revenge",
+    "file": "Spider-Man - X-Men - Arcade's Revenge (USA).sfc"
+  },
+  {
+    "name": "Spindizzy Worlds",
+    "file": "Spindizzy Worlds (USA).sfc"
+  },
+  {
+    "name": "Sporting News Baseball, The",
+    "file": "Sporting News Baseball, The (USA).sfc"
+  },
+  {
+    "name": "Sports Illustrated Championship Football & Baseball",
+    "file": "Sports Illustrated Championship Football & Baseball (USA).sfc"
+  },
+  {
+    "name": "Spot Goes to Hollywood",
+    "file": "Spot Goes to Hollywood (USA) (Proto).sfc"
+  },
+  {
+    "name": "Star Fox",
+    "file": "Star Fox (USA) (Rev 2).sfc"
+  },
+  {
+    "name": "Star Fox 2",
+    "file": "Star Fox 2 (USA).sfc"
+  },
+  {
+    "name": "Star Trek - Deep Space Nine - Crossroads of Time",
+    "file": "Star Trek - Deep Space Nine - Crossroads of Time (USA).sfc"
+  },
+  {
+    "name": "Star Trek - Starfleet Academy - Starship Bridge Simulator",
+    "file": "Star Trek - Starfleet Academy - Starship Bridge Simulator (USA).sfc"
+  },
+  {
+    "name": "Star Trek - The Next Generation - Future's Past",
+    "file": "Star Trek - The Next Generation - Future's Past (USA).sfc"
+  },
+  {
+    "name": "Stargate",
+    "file": "Stargate (USA).sfc"
+  },
+  {
+    "name": "Steel Talons",
+    "file": "Steel Talons (USA).sfc"
+  },
+  {
+    "name": "Sterling Sharpe - End 2 End",
+    "file": "Sterling Sharpe - End 2 End (USA).sfc"
+  },
+  {
+    "name": "Steven Seagal Is The Final Option",
+    "file": "Steven Seagal Is The Final Option (USA) (Proto).sfc"
+  },
+  {
+    "name": "Stone Protectors",
+    "file": "Stone Protectors (USA).sfc"
+  },
+  {
+    "name": "Street Combat",
+    "file": "Street Combat (USA).sfc"
+  },
+  {
+    "name": "Street Fighter Alpha 2",
+    "file": "Street Fighter Alpha 2 (USA).sfc"
+  },
+  {
+    "name": "Street Fighter II",
+    "file": "Street Fighter II (USA).sfc"
+  },
+  {
+    "name": "Street Fighter II Turbo",
+    "file": "Street Fighter II Turbo (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Street Racer",
+    "file": "Street Racer (USA).sfc"
+  },
+  {
+    "name": "Street Sports - Jammit",
+    "file": "Street Sports - Jammit (USA).sfc"
+  },
+  {
+    "name": "Street Sports - Street Hockey '95",
+    "file": "Street Sports - Street Hockey '95 (USA).sfc"
+  },
+  {
+    "name": "Strike Gunner S.T.G",
+    "file": "Strike Gunner S.T.G (USA).sfc"
+  },
+  {
+    "name": "Stunt Race FX",
+    "file": "Stunt Race FX (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Sunset Riders",
+    "file": "Sunset Riders (USA).sfc"
+  },
+  {
+    "name": "Super 3D Noah's Ark",
+    "file": "Super 3D Noah's Ark (USA) (Unl).sfc"
+  },
+  {
+    "name": "Super 8",
+    "file": "Super 8 (USA) (Unl).sfc"
+  },
+  {
+    "name": "Super Adventure Island",
+    "file": "Super Adventure Island (USA).sfc"
+  },
+  {
+    "name": "Super Adventure Island II",
+    "file": "Super Adventure Island II (USA).sfc"
+  },
+  {
+    "name": "Super Alfred Chicken",
+    "file": "Super Alfred Chicken (USA).sfc"
+  },
+  {
+    "name": "Super Aquatic Games Starring the Aquabats, The",
+    "file": "Super Aquatic Games Starring the Aquabats, The (USA).sfc"
+  },
+  {
+    "name": "Super Baseball Simulator 1.000",
+    "file": "Super Baseball Simulator 1.000 (USA).sfc"
+  },
+  {
+    "name": "Super Bases Loaded",
+    "file": "Super Bases Loaded (USA).sfc"
+  },
+  {
+    "name": "Super Bases Loaded 2",
+    "file": "Super Bases Loaded 2 (USA).sfc"
+  },
+  {
+    "name": "Super Bases Loaded 3 - License to Steal",
+    "file": "Super Bases Loaded 3 - License to Steal (USA).sfc"
+  },
+  {
+    "name": "Super Batter Up",
+    "file": "Super Batter Up (USA).sfc"
+  },
+  {
+    "name": "Super Battleship",
+    "file": "Super Battleship (USA).sfc"
+  },
+  {
+    "name": "Super Battletank 2",
+    "file": "Super Battletank 2 (USA).sfc"
+  },
+  {
+    "name": "Super Black Bass",
+    "file": "Super Black Bass (USA).sfc"
+  },
+  {
+    "name": "Super Bomberman",
+    "file": "Super Bomberman (USA).sfc"
+  },
+  {
+    "name": "Super Bomberman 2",
+    "file": "Super Bomberman 2 (USA).sfc"
+  },
+  {
+    "name": "Super Bonk",
+    "file": "Super Bonk (USA).sfc"
+  },
+  {
+    "name": "Super Bowling",
+    "file": "Super Bowling (USA).sfc"
+  },
+  {
+    "name": "Super Buster Bros.",
+    "file": "Super Buster Bros. (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Super Caesars Palace",
+    "file": "Super Caesars Palace (USA).sfc"
+  },
+  {
+    "name": "Super Castlevania IV",
+    "file": "Super Castlevania IV (USA).sfc"
+  },
+  {
+    "name": "Super Chase H.Q.",
+    "file": "Super Chase H.Q. (USA).sfc"
+  },
+  {
+    "name": "Super Conflict",
+    "file": "Super Conflict (USA).sfc"
+  },
+  {
+    "name": "Super Double Dragon",
+    "file": "Super Double Dragon (USA).sfc"
+  },
+  {
+    "name": "Super Drift Out - World Rally Championships",
+    "file": "Super Drift Out - World Rally Championships (USA) (Proto).sfc"
+  },
+  {
+    "name": "Super Ghouls 'N Ghosts",
+    "file": "Super Ghouls 'N Ghosts (USA).sfc"
+  },
+  {
+    "name": "Super Goal! 2",
+    "file": "Super Goal! 2 (USA).sfc"
+  },
+  {
+    "name": "Super Godzilla",
+    "file": "Super Godzilla (USA).sfc"
+  },
+  {
+    "name": "Super High Impact",
+    "file": "Super High Impact (USA).sfc"
+  },
+  {
+    "name": "Super James Pond",
+    "file": "Super James Pond (USA).sfc"
+  },
+  {
+    "name": "Super Mario All-Stars",
+    "file": "Super Mario All-Stars (USA).sfc"
+  },
+  {
+    "name": "Super Mario All-Stars + Super Mario World",
+    "file": "Super Mario All-Stars + Super Mario World (USA).sfc"
+  },
+  {
+    "name": "Super Mario Kart",
+    "file": "Super Mario Kart (USA).sfc"
+  },
+  {
+    "name": "Super Mario RPG - Legend of the Seven Stars",
+    "file": "Super Mario RPG - Legend of the Seven Stars (USA).sfc"
+  },
+  {
+    "name": "Super Mario World",
+    "file": "Super Mario World (USA).sfc"
+  },
+  {
+    "name": "Super Mario World 2 - Yoshi's Island",
+    "file": "Super Mario World 2 - Yoshi's Island (USA).sfc"
+  },
+  {
+    "name": "Super Ninja Boy",
+    "file": "Super Ninja Boy (USA).sfc"
+  },
+  {
+    "name": "Super Nova",
+    "file": "Super Nova (USA).sfc"
+  },
+  {
+    "name": "Super Off Road",
+    "file": "Super Off Road (USA).sfc"
+  },
+  {
+    "name": "Super Off Road - The Baja",
+    "file": "Super Off Road - The Baja (USA).sfc"
+  },
+  {
+    "name": "Super Pinball - Behind the Mask",
+    "file": "Super Pinball - Behind the Mask (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Super Play Action Football",
+    "file": "Super Play Action Football (USA).sfc"
+  },
+  {
+    "name": "Super Punch-Out!!",
+    "file": "Super Punch-Out!! (USA).sfc"
+  },
+  {
+    "name": "Super Putty",
+    "file": "Super Putty (USA).sfc"
+  },
+  {
+    "name": "Super R-Type",
+    "file": "Super R-Type (USA).sfc"
+  },
+  {
+    "name": "Super R.B.I. Baseball",
+    "file": "Super R.B.I. Baseball (USA).sfc"
+  },
+  {
+    "name": "Super Scope 6",
+    "file": "Super Scope 6 (USA).sfc"
+  },
+  {
+    "name": "Super Shadow of the Beast",
+    "file": "Super Shadow of the Beast (USA) (Proto).sfc"
+  },
+  {
+    "name": "Super Slam Dunk",
+    "file": "Super Slam Dunk (USA).sfc"
+  },
+  {
+    "name": "Super Slap Shot",
+    "file": "Super Slap Shot (USA).sfc"
+  },
+  {
+    "name": "Super Smash T.V.",
+    "file": "Super Smash T.V. (USA).sfc"
+  },
+  {
+    "name": "Super Soccer",
+    "file": "Super Soccer (USA) (Arcade).sfc"
+  },
+  {
+    "name": "Super Soccer",
+    "file": "Super Soccer (USA).sfc"
+  },
+  {
+    "name": "Super Soccer Champ",
+    "file": "Super Soccer Champ (USA).sfc"
+  },
+  {
+    "name": "Super Solitaire",
+    "file": "Super Solitaire (USA) (En,Fr,De,Es,It).sfc"
+  },
+  {
+    "name": "Super Star Fox Weekend",
+    "file": "Super Star Fox Weekend (USA).sfc"
+  },
+  {
+    "name": "Super Star Wars",
+    "file": "Super Star Wars (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Super Star Wars - Return of the Jedi",
+    "file": "Super Star Wars - Return of the Jedi (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Super Star Wars - The Empire Strikes Back",
+    "file": "Super Star Wars - The Empire Strikes Back (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Super Street Fighter II",
+    "file": "Super Street Fighter II (USA).sfc"
+  },
+  {
+    "name": "Super Strike Eagle",
+    "file": "Super Strike Eagle (USA).sfc"
+  },
+  {
+    "name": "Super Tennis",
+    "file": "Super Tennis (USA) (Arcade).sfc"
+  },
+  {
+    "name": "Super Tennis",
+    "file": "Super Tennis (USA).sfc"
+  },
+  {
+    "name": "Super Troll Islands",
+    "file": "Super Troll Islands (USA).sfc"
+  },
+  {
+    "name": "Super Turrican",
+    "file": "Super Turrican (USA).sfc"
+  },
+  {
+    "name": "Super Turrican 2",
+    "file": "Super Turrican 2 (USA).sfc"
+  },
+  {
+    "name": "Super Valis IV",
+    "file": "Super Valis IV (USA).sfc"
+  },
+  {
+    "name": "Super Widget",
+    "file": "Super Widget (USA).sfc"
+  },
+  {
+    "name": "Suzuka 8 Hours",
+    "file": "Suzuka 8 Hours (USA).sfc"
+  },
+  {
+    "name": "Sylvester and Tweety",
+    "file": "Sylvester and Tweety (USA) (Proto) (1993-10-11).sfc"
+  },
+  {
+    "name": "Sylvester and Tweety",
+    "file": "Sylvester and Tweety (USA) (Proto) (1993-12-15).sfc"
+  },
+  {
+    "name": "Syndicate",
+    "file": "Syndicate (USA).sfc"
+  },
+  {
+    "name": "T2 - The Arcade Game",
+    "file": "T2 - The Arcade Game (USA).sfc"
+  },
+  {
+    "name": "TKO Super Championship Boxing",
+    "file": "TKO Super Championship Boxing (USA).sfc"
+  },
+  {
+    "name": "TNN Bass Tournament of Champions",
+    "file": "TNN Bass Tournament of Champions (USA).sfc"
+  },
+  {
+    "name": "Taz-Mania",
+    "file": "Taz-Mania (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Tecmo Secret of the Stars",
+    "file": "Tecmo Secret of the Stars (USA).sfc"
+  },
+  {
+    "name": "Tecmo Super Baseball",
+    "file": "Tecmo Super Baseball (USA).sfc"
+  },
+  {
+    "name": "Tecmo Super Bowl",
+    "file": "Tecmo Super Bowl (USA).sfc"
+  },
+  {
+    "name": "Tecmo Super Bowl II - Special Edition",
+    "file": "Tecmo Super Bowl II - Special Edition (USA).sfc"
+  },
+  {
+    "name": "Tecmo Super Bowl III - Final Edition",
+    "file": "Tecmo Super Bowl III - Final Edition (USA).sfc"
+  },
+  {
+    "name": "Tecmo Super NBA Basketball",
+    "file": "Tecmo Super NBA Basketball (USA) (Alt 1).sfc"
+  },
+  {
+    "name": "Tecmo Super NBA Basketball",
+    "file": "Tecmo Super NBA Basketball (USA).sfc"
+  },
+  {
+    "name": "Teenage Mutant Ninja Turtles - Tournament Fighters",
+    "file": "Teenage Mutant Ninja Turtles - Tournament Fighters (USA).sfc"
+  },
+  {
+    "name": "Teenage Mutant Ninja Turtles IV - Turtles in Time",
+    "file": "Teenage Mutant Ninja Turtles IV - Turtles in Time (USA).sfc"
+  },
+  {
+    "name": "Terminator 2 - Judgment Day",
+    "file": "Terminator 2 - Judgment Day (USA).sfc"
+  },
+  {
+    "name": "Terminator, The",
+    "file": "Terminator, The (USA).sfc"
+  },
+  {
+    "name": "Tetris & Dr. Mario",
+    "file": "Tetris & Dr. Mario (USA).sfc"
+  },
+  {
+    "name": "Tetris 2",
+    "file": "Tetris 2 (USA) (Rev 1).sfc"
+  },
+  {
+    "name": "Tetris Attack",
+    "file": "Tetris Attack (USA) (En,Ja).sfc"
+  },
+  {
+    "name": "Thomas the Tank Engine & Friends",
+    "file": "Thomas the Tank Engine & Friends (USA).sfc"
+  },
+  {
+    "name": "Thunder Spirits",
+    "file": "Thunder Spirits (USA).sfc"
+  },
+  {
+    "name": "Tick, The",
+    "file": "Tick, The (USA).sfc"
+  },
+  {
+    "name": "Time Trax",
+    "file": "Time Trax (USA).sfc"
+  },
+  {
+    "name": "Timecop",
+    "file": "Timecop (USA).sfc"
+  },
+  {
+    "name": "Timeslip",
+    "file": "Timeslip (USA).sfc"
+  },
+  {
+    "name": "Timon & Pumbaa's Jungle Games",
+    "file": "Timon & Pumbaa's Jungle Games (USA).sfc"
+  },
+  {
+    "name": "Tin Star",
+    "file": "Tin Star (USA).sfc"
+  },
+  {
+    "name": "Tiny Toon Adventures - Buster Busts Loose!",
+    "file": "Tiny Toon Adventures - Buster Busts Loose! (USA).sfc"
+  },
+  {
+    "name": "Tiny Toon Adventures - Wacky Sports Challenge",
+    "file": "Tiny Toon Adventures - Wacky Sports Challenge (USA).sfc"
+  },
+  {
+    "name": "Todd McFarlane's Spawn - The Video Game",
+    "file": "Todd McFarlane's Spawn - The Video Game (USA).sfc"
+  },
+  {
+    "name": "Tom and Jerry",
+    "file": "Tom and Jerry (USA).sfc"
+  },
+  {
+    "name": "Tommy Moe's Winter Extreme - Skiing and Snowboarding",
+    "file": "Tommy Moe's Winter Extreme - Skiing and Snowboarding (USA).sfc"
+  },
+  {
+    "name": "Tony Meola's Sidekicks Soccer",
+    "file": "Tony Meola's Sidekicks Soccer (USA).sfc"
+  },
+  {
+    "name": "Top Gear",
+    "file": "Top Gear (USA).sfc"
+  },
+  {
+    "name": "Top Gear 2",
+    "file": "Top Gear 2 (USA).sfc"
+  },
+  {
+    "name": "Top Gear 3000",
+    "file": "Top Gear 3000 (USA).sfc"
+  },
+  {
+    "name": "Total Carnage",
+    "file": "Total Carnage (USA).sfc"
+  },
+  {
+    "name": "Toy Story",
+    "file": "Toy Story (USA).sfc"
+  },
+  {
+    "name": "Toys - Let the Toy Wars begin!",
+    "file": "Toys - Let the Toy Wars begin! (USA).sfc"
+  },
+  {
+    "name": "Tri-Star",
+    "file": "Tri-Star (USA) (Unl).sfc"
+  },
+  {
+    "name": "Troddlers",
+    "file": "Troddlers (USA).sfc"
+  },
+  {
+    "name": "Troy Aikman NFL Football",
+    "file": "Troy Aikman NFL Football (USA).sfc"
+  },
+  {
+    "name": "True Golf Classics - Pebble Beach Golf Links",
+    "file": "True Golf Classics - Pebble Beach Golf Links (USA).sfc"
+  },
+  {
+    "name": "True Golf Classics - Waialae Country Club",
+    "file": "True Golf Classics - Waialae Country Club (USA).sfc"
+  },
+  {
+    "name": "True Golf Classics - Wicked 18",
+    "file": "True Golf Classics - Wicked 18 (USA).sfc"
+  },
+  {
+    "name": "True Lies",
+    "file": "True Lies (USA).sfc"
+  },
+  {
+    "name": "Tuff E Nuff",
+    "file": "Tuff E Nuff (USA).sfc"
+  },
+  {
+    "name": "Turbo Toons",
+    "file": "Turbo Toons (USA) (Proto).sfc"
+  },
+  {
+    "name": "Turn and Burn - No-Fly Zone",
+    "file": "Turn and Burn - No-Fly Zone (USA).sfc"
+  },
+  {
+    "name": "Twisted Tales of Spike McFang, The",
+    "file": "Twisted Tales of Spike McFang, The (USA).sfc"
+  },
+  {
+    "name": "U.N. Squadron",
+    "file": "U.N. Squadron (USA).sfc"
+  },
+  {
+    "name": "Ultima - Runes of Virtue II",
+    "file": "Ultima - Runes of Virtue II (USA).sfc"
+  },
+  {
+    "name": "Ultima - The Black Gate",
+    "file": "Ultima - The Black Gate (USA).sfc"
+  },
+  {
+    "name": "Ultima - The False Prophet",
+    "file": "Ultima - The False Prophet (USA).sfc"
+  },
+  {
+    "name": "Ultimate Fighter",
+    "file": "Ultimate Fighter (USA).sfc"
+  },
+  {
+    "name": "Ultimate Mortal Kombat 3",
+    "file": "Ultimate Mortal Kombat 3 (USA).sfc"
+  },
+  {
+    "name": "Ultraman",
+    "file": "Ultraman (USA).sfc"
+  },
+  {
+    "name": "Uncharted Waters",
+    "file": "Uncharted Waters (USA).sfc"
+  },
+  {
+    "name": "Uniracers",
+    "file": "Uniracers (USA).sfc"
+  },
+  {
+    "name": "Universal Soldier",
+    "file": "Universal Soldier (USA) (Proto).sfc"
+  },
+  {
+    "name": "Untouchables, The",
+    "file": "Untouchables, The (USA).sfc"
+  },
+  {
+    "name": "Urban Strike",
+    "file": "Urban Strike (USA).sfc"
+  },
+  {
+    "name": "Utopia - The Creation of a Nation",
+    "file": "Utopia - The Creation of a Nation (USA).sfc"
+  },
+  {
+    "name": "Vegas Stakes",
+    "file": "Vegas Stakes (USA).sfc"
+  },
+  {
+    "name": "Venom - Spider-Man - Separation Anxiety",
+    "file": "Venom - Spider-Man - Separation Anxiety (USA).sfc"
+  },
+  {
+    "name": "Virtual Bart",
+    "file": "Virtual Bart (USA).sfc"
+  },
+  {
+    "name": "Virtual Soccer [b]",
+    "file": "Virtual Soccer (USA) (Proto) [b].sfc"
+  },
+  {
+    "name": "Vortex",
+    "file": "Vortex (USA) (En,Es).sfc"
+  },
+  {
+    "name": "WCW Super Brawl Wrestling",
+    "file": "WCW Super Brawl Wrestling (USA).sfc"
+  },
+  {
+    "name": "WWF Raw",
+    "file": "WWF Raw (USA).sfc"
+  },
+  {
+    "name": "WWF Royal Rumble",
+    "file": "WWF Royal Rumble (USA).sfc"
+  },
+  {
+    "name": "WWF Super WrestleMania",
+    "file": "WWF Super WrestleMania (USA).sfc"
+  },
+  {
+    "name": "WWF WrestleMania - The Arcade Game",
+    "file": "WWF WrestleMania - The Arcade Game (USA).sfc"
+  },
+  {
+    "name": "War 2410",
+    "file": "War 2410 (USA).sfc"
+  },
+  {
+    "name": "War 3010 - The Revolution",
+    "file": "War 3010 - The Revolution (USA).sfc"
+  },
+  {
+    "name": "Wario's Woods",
+    "file": "Wario's Woods (USA).sfc"
+  },
+  {
+    "name": "Warlock",
+    "file": "Warlock (USA).sfc"
+  },
+  {
+    "name": "WarpSpeed",
+    "file": "WarpSpeed (USA).sfc"
+  },
+  {
+    "name": "Wayne Gretzky and the NHLPA All-Stars",
+    "file": "Wayne Gretzky and the NHLPA All-Stars (USA).sfc"
+  },
+  {
+    "name": "Wayne's World",
+    "file": "Wayne's World (USA).sfc"
+  },
+  {
+    "name": "We're Back! - A Dinosaur's Story",
+    "file": "We're Back! - A Dinosaur's Story (USA).sfc"
+  },
+  {
+    "name": "WeaponLord",
+    "file": "WeaponLord (USA).sfc"
+  },
+  {
+    "name": "Wheel of Fortune",
+    "file": "Wheel of Fortune (USA).sfc"
+  },
+  {
+    "name": "Wheel of Fortune - Deluxe Edition",
+    "file": "Wheel of Fortune - Deluxe Edition (USA).sfc"
+  },
+  {
+    "name": "Where in Time Is Carmen Sandiego",
+    "file": "Where in Time Is Carmen Sandiego (USA) (En,Fr,De,Es,It).sfc"
+  },
+  {
+    "name": "Where in the World Is Carmen Sandiego",
+    "file": "Where in the World Is Carmen Sandiego (USA) (En,Fr,De,Es,It).sfc"
+  },
+  {
+    "name": "Whizz",
+    "file": "Whizz (USA).sfc"
+  },
+  {
+    "name": "Wild Guns",
+    "file": "Wild Guns (USA).sfc"
+  },
+  {
+    "name": "Wild Snake",
+    "file": "Wild Snake (USA).sfc"
+  },
+  {
+    "name": "Williams Arcade's Greatest Hits",
+    "file": "Williams Arcade's Greatest Hits (USA).sfc"
+  },
+  {
+    "name": "Wing Commander",
+    "file": "Wing Commander (USA).sfc"
+  },
+  {
+    "name": "Wing Commander - The Secret Missions",
+    "file": "Wing Commander - The Secret Missions (USA).sfc"
+  },
+  {
+    "name": "Wings 2 - Aces High",
+    "file": "Wings 2 - Aces High (USA).sfc"
+  },
+  {
+    "name": "Winter Olympic Games - Lillehammer '94",
+    "file": "Winter Olympic Games - Lillehammer '94 (USA) (En,Fr,De,Es,It,Pt,Sv,No).sfc"
+  },
+  {
+    "name": "Wizard of Oz, The",
+    "file": "Wizard of Oz, The (USA).sfc"
+  },
+  {
+    "name": "Wizardry V - Heart of the Maelstrom",
+    "file": "Wizardry V - Heart of the Maelstrom (USA).sfc"
+  },
+  {
+    "name": "Wolfchild",
+    "file": "Wolfchild (USA).sfc"
+  },
+  {
+    "name": "Wolfenstein 3-D",
+    "file": "Wolfenstein 3-D (USA).sfc"
+  },
+  {
+    "name": "Wolverine - Adamantium Rage",
+    "file": "Wolverine - Adamantium Rage (USA).sfc"
+  },
+  {
+    "name": "Wordtris",
+    "file": "Wordtris (USA).sfc"
+  },
+  {
+    "name": "World Class Service Super Nintendo Tester",
+    "file": "World Class Service Super Nintendo Tester (USA).sfc"
+  },
+  {
+    "name": "World Cup USA 94",
+    "file": "World Cup USA 94 (USA) (En,Fr,De,Es,It,Nl,Pt,Sv).sfc"
+  },
+  {
+    "name": "World Heroes",
+    "file": "World Heroes (USA).sfc"
+  },
+  {
+    "name": "World Heroes 2",
+    "file": "World Heroes 2 (USA).sfc"
+  },
+  {
+    "name": "World League Soccer",
+    "file": "World League Soccer (USA).sfc"
+  },
+  {
+    "name": "World Soccer 94 - Road to Glory",
+    "file": "World Soccer 94 - Road to Glory (USA).sfc"
+  },
+  {
+    "name": "X-Kaliber 2097",
+    "file": "X-Kaliber 2097 (USA).sfc"
+  },
+  {
+    "name": "X-Men - Mutant Apocalypse",
+    "file": "X-Men - Mutant Apocalypse (USA).sfc"
+  },
+  {
+    "name": "XBAND",
+    "file": "XBAND (USA).sfc"
+  },
+  {
+    "name": "Xardion",
+    "file": "Xardion (USA).sfc"
+  },
+  {
+    "name": "Yoshi's Cookie",
+    "file": "Yoshi's Cookie (USA).sfc"
+  },
+  {
+    "name": "Yoshi's Safari",
+    "file": "Yoshi's Safari (USA).sfc"
+  },
+  {
+    "name": "Young Merlin",
+    "file": "Young Merlin (USA).sfc"
+  },
+  {
+    "name": "Ys III - Wanderers from Ys",
+    "file": "Ys III - Wanderers from Ys (USA).sfc"
+  },
+  {
+    "name": "Zero the Kamikaze Squirrel",
+    "file": "Zero the Kamikaze Squirrel (USA).sfc"
+  },
+  {
+    "name": "Zombies Ate My Neighbors",
+    "file": "Zombies Ate My Neighbors (USA).sfc"
+  },
+  {
+    "name": "Zool - Ninja of the 'Nth' Dimension",
+    "file": "Zool - Ninja of the 'Nth' Dimension (USA).sfc"
+  },
+  {
+    "name": "Zoop",
+    "file": "Zoop (USA).sfc"
+  },
+  {
+    "name": "seaQuest DSV",
+    "file": "seaQuest DSV (USA).sfc"
+  }
+]
