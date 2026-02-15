@@ -156,8 +156,8 @@ footer .heart{color:#e94560;font-size:1.1em}
 <script>
 // === SETTINGS ===
 var DEFAULT_SETTINGS={autoFullscreen:false,forceLandscape:true,autoHideToolbar:true};
-var DEFAULT_KEYBINDS={up:'ArrowUp',down:'ArrowDown',left:'ArrowLeft',right:'ArrowRight',a:'x',b:'z',start:'Enter',select:'Shift',l:'a',r:'s'};
-var KEYBIND_LABELS={up:'D-Pad Up',down:'D-Pad Down',left:'D-Pad Left',right:'D-Pad Right',a:'A Button',b:'B Button',start:'Start',select:'Select',l:'L Shoulder',r:'R Shoulder'};
+var DEFAULT_KEYBINDS={up:'ArrowUp',down:'ArrowDown',left:'ArrowLeft',right:'ArrowRight',a:'x',b:'z',x:'c',y:'v',start:'Enter',select:'Shift',l:'a',r:'s'};
+var KEYBIND_LABELS={up:'D-Pad Up',down:'D-Pad Down',left:'D-Pad Left',right:'D-Pad Right',a:'\u2A2F A Button (Bottom)',b:'\u25CB B Button (Right)',x:'\u25A1 X Button (Left)',y:'\u25B3 Y Button (Top)',start:'Start',select:'Select',l:'L Shoulder',r:'R Shoulder'};
 
 function loadSettings(){try{var s=JSON.parse(localStorage.getItem('nesPlayerSettings'));return Object.assign({},DEFAULT_SETTINGS,s)}catch(e){return Object.assign({},DEFAULT_SETTINGS)}}
 function saveSetting(k,v){var s=loadSettings();s[k]=v;localStorage.setItem('nesPlayerSettings',JSON.stringify(s))}
