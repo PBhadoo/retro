@@ -133,7 +133,7 @@ footer .heart{color:#e94560;font-size:1.1em}
 <div class="toggle-switch"><input type="checkbox" id="setting-auto-hide-toolbar" onchange="saveSetting('autoHideToolbar',this.checked)"><span class="toggle-slider"></span></div>
 </div>
 <h3>&#127918; Controls</h3>
-<p style="color:#888;font-size:.85em;margin-bottom:5px">EmulatorJS provides a full virtual gamepad with <strong style="color:#e0e0e0">✕ A</strong>, <strong style="color:#e0e0e0">○ B</strong>, <strong style="color:#e0e0e0">□ X</strong>, <strong style="color:#e0e0e0">△ Y</strong> buttons (PlayStation-style diamond layout).</p>
+<p style="color:#888;font-size:.85em;margin-bottom:5px">The NES controller has <strong style="color:#e0e0e0">A</strong> and <strong style="color:#e0e0e0">B</strong> action buttons, plus D-pad, Start, and Select. EmulatorJS renders these as an on-screen virtual gamepad on mobile.</p>
 <p style="color:#888;font-size:.85em">To remap keyboard controls, use the <strong style="color:#4ecca3">⚙ settings icon inside the emulator</strong> during gameplay.</p>
 <h3>&#128268; Offline Play</h3>
 <div class="setting-row">
@@ -213,14 +213,7 @@ p.style.display='block';g.innerHTML='';
 window.EJS_player='#game';
 window.EJS_gameUrl=romUrl;
 window.EJS_core='nes';
-window.EJS_Localization={};
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
-window.EJS_VirtualGamepadSettings = [
-  {type:"zone",location:"left",inputValues:[4,7,5,6]},
-  {type:"zone",location:"right",inputValues:[9,8,0,1]},
-  {type:"button",text:"Start",id:"start",location:"center",left:-10,fontSize:12,block:true,input_value:3},
-  {type:"button",text:"Select",id:"select",location:"center",left:60,fontSize:12,block:true,input_value:2}
-];
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
 resetToolbarTimer();
