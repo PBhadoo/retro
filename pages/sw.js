@@ -1,8 +1,12 @@
-const CACHE_NAME = 'retro-games-v2';
-const ROM_CACHE_NAME = 'retro-roms-v1';
+const CACHE_NAME = 'retro-games-v3';
+const ROM_CACHE_NAME = 'retro-roms-v2';
 const APP_SHELL = [
     '/',
-    '/index.html'
+    '/index.html',
+    '/nes/',
+    '/nes/index.html',
+    '/snes/',
+    '/snes/index.html'
 ];
 
 // Install: cache app shell
@@ -28,12 +32,22 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
+// Check if a request is for a ROM file
+function isRomRequest(url) {
+    const path = url.pathname;
+    // NES ROMs
+    if (path.startsWith('/roms/') && (path.endsWith('.nes') || path.endsWith('.NES'))) return true;
+    // SNES ROMs
+    if (path.startsWith('/snes-roms/') && (path.endsWith('.sfc') || path.endsWith('.smc') || path.endsWith('.SFC') || path.endsWith('.SMC'))) return true;
+    return false;
+}
+
 // Fetch: serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
 
     // For ROM files, check ROM cache first
-    if (url.pathname.startsWith('/roms/') && url.pathname.endsWith('.nes')) {
+    if (isRomRequest(url)) {
         event.respondWith(
             caches.open(ROM_CACHE_NAME).then((cache) => {
                 return cache.match(event.request).then((cachedResponse) => {
@@ -62,7 +76,7 @@ self.addEventListener('fetch', (event) => {
             return fetch(event.request).then((response) => {
                 if (!response || response.status !== 200) return response;
                 // Cache successful responses for app resources
-                if (url.origin === self.location.origin && !url.pathname.startsWith('/roms/')) {
+                if (url.origin === self.location.origin && !isRomRequest(url)) {
                     const responseClone = response.clone();
                     caches.open(CACHE_NAME).then((cache) => {
                         cache.put(event.request, responseClone);

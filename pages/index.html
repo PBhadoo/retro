@@ -2,236 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>NES Game Player - Cloudflare Pages</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Game Player</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#1a1a2e;color:#e0e0e0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;min-height:100vh;display:flex;flex-direction:column}
-.header{background:#16213e;padding:20px;text-align:center;border-bottom:3px solid #e94560;position:relative}
-.header h1{color:#e94560;font-size:2em}
-.header p{color:#888;margin-top:5px}
-.header-actions{position:absolute;right:15px;top:50%;transform:translateY(-50%);display:flex;gap:10px}
-.icon-btn{background:none;border:2px solid #0f3460;color:#e0e0e0;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.2em;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.icon-btn:hover{border-color:#e94560;color:#e94560}
-.container{max-width:900px;margin:30px auto;padding:0 20px;flex:1;width:100%}
-.upload-section{background:#16213e;border:2px dashed #0f3460;border-radius:8px;padding:30px;text-align:center;margin-bottom:20px}
-.upload-section h2{margin-bottom:10px}
-.btn{background:#e94560;color:#fff;border:none;padding:10px 25px;border-radius:5px;cursor:pointer;font-size:1em;margin:5px}
-.btn:hover{background:#c73652}
-.btn:disabled{background:#555;cursor:not-allowed}
-.btn-secondary{background:#0f3460}
-.btn-secondary:hover{background:#1a4a8a}
-.btn-small{padding:6px 14px;font-size:.85em}
-.btn-warning{background:#f0a500;color:#000}
-.btn-warning:hover{background:#d49200}
-.status-msg{margin-top:10px;font-size:.9em;color:#4ecca3}
-.status-msg.error{color:#e94560}
-.search-bar{width:100%;padding:12px 16px;border:1px solid #0f3460;border-radius:6px;background:#16213e;color:#e0e0e0;font-size:1em;margin:15px 0}
-.search-bar:focus{outline:none;border-color:#e94560}
-.search-bar::placeholder{color:#666}
-.game-count{color:#888;font-size:.85em;margin-bottom:10px}
-.game-list{list-style:none}
-.game-row{display:flex;align-items:center;padding:10px 15px;background:#16213e;border:1px solid #0f3460;border-bottom:none;cursor:pointer;transition:all .15s}
-.game-row:first-child{border-radius:8px 8px 0 0}
-.game-row:last-child{border-bottom:1px solid #0f3460;border-radius:0 0 8px 8px}
-.game-row:only-child{border-radius:8px;border-bottom:1px solid #0f3460}
-.game-row:hover{background:#1a2a4e;border-color:#e94560}
-.game-row:hover+.game-row{border-top-color:#e94560}
-.game-row .game-name{flex:1;color:#e0e0e0;font-size:.95em}
-.game-row .game-badges{display:flex;align-items:center;gap:6px;margin-left:8px}
-.badge-offline{background:#4ecca3;color:#000;font-size:.65em;padding:2px 6px;border-radius:3px;font-weight:700}
-.game-row .cache-btn{background:none;border:1px solid #0f3460;color:#888;font-size:.75em;padding:3px 8px;border-radius:3px;cursor:pointer;white-space:nowrap}
-.game-row .cache-btn:hover{border-color:#4ecca3;color:#4ecca3}
-.game-row .cache-btn.cached{border-color:#4ecca3;color:#4ecca3}
-.game-row .play-icon{color:#e94560;font-size:1.2em;margin-left:10px}
-.no-games{text-align:center;padding:40px;color:#888}
-#player-container{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:1000}
-.player-toolbar{position:fixed;top:0;left:0;right:0;z-index:1001;display:none;justify-content:flex-start;align-items:center;gap:8px;padding:8px 12px 8px 52px;background:rgba(0,0,0,.85);transition:opacity .3s}
-.player-toolbar.visible{display:flex}
-.menu-toggle{position:fixed;top:8px;left:8px;z-index:1002;width:36px;height:36px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;cursor:pointer;font-size:1.3em;display:flex;align-items:center;justify-content:center;line-height:1}
-.menu-toggle:hover{background:rgba(233,69,96,.8)}
-.toolbar-btn{background:rgba(233,69,96,.9);color:#fff;border:none;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:.9em;white-space:nowrap}
-.toolbar-btn:hover{background:#e94560}
-.toolbar-btn.active{background:#4ecca3}
-.offline-banner{display:none;background:#f0a500;color:#000;text-align:center;padding:8px;font-size:.85em;font-weight:700}
-.offline-banner.show{display:block}
-.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:2000;justify-content:center;align-items:center;padding:20px}
-.modal-overlay.active{display:flex}
-.modal-box{background:#16213e;border:1px solid #0f3460;border-radius:10px;width:100%;max-width:550px;max-height:90vh;overflow-y:auto;padding:25px}
-.modal-box h2{color:#e94560;margin-bottom:20px;font-size:1.4em}
-.modal-box h3{color:#e94560;margin:20px 0 10px;font-size:1.1em;border-bottom:1px solid #0f3460;padding-bottom:5px}
-.modal-close-btn{float:right;background:none;border:2px solid #e94560;color:#e94560;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1em;display:flex;align-items:center;justify-content:center}
-.modal-close-btn:hover{background:#e94560;color:#fff}
-.setting-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(15,52,96,.2)}
-.setting-row label{color:#e0e0e0;font-size:.95em;flex:1}
-.setting-row .setting-desc{color:#888;font-size:.78em;display:block}
-.toggle-switch{position:relative;width:50px;height:26px}
-.toggle-switch input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;z-index:1;margin:0;top:0;left:0}
-.toggle-slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#333;transition:.3s;border-radius:26px}
-.toggle-slider:before{position:absolute;content:"";height:20px;width:20px;left:3px;bottom:3px;background-color:#e0e0e0;transition:.3s;border-radius:50%}
-.toggle-switch input:checked+.toggle-slider{background-color:#4ecca3}
-.toggle-switch input:checked+.toggle-slider:before{transform:translateX(24px)}
-.filter-row{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.filter-btn{background:#0f3460;color:#e0e0e0;border:none;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:.85em}
-.filter-btn:hover{background:#1a4a8a}
-.filter-btn.active{background:#e94560;color:#fff}
-footer{background:#16213e;text-align:center;padding:15px;margin-top:40px;border-top:1px solid #0f3460;color:#888;font-size:.9em}
+.header{background:#16213e;padding:30px 20px;text-align:center;border-bottom:3px solid #e94560}
+.header h1{color:#e94560;font-size:2.4em;margin-bottom:5px}
+.header p{color:#888;font-size:1.05em}
+.container{max-width:900px;margin:40px auto;padding:0 20px;flex:1;width:100%}
+.intro{text-align:center;margin-bottom:40px}
+.intro h2{font-size:1.5em;margin-bottom:10px;color:#e0e0e0}
+.intro p{color:#888;font-size:.95em;line-height:1.6;max-width:600px;margin:0 auto}
+.console-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:40px}
+.console-card{background:#16213e;border:2px solid #0f3460;border-radius:12px;padding:30px;text-align:center;cursor:pointer;transition:all .25s;text-decoration:none;color:inherit;display:block}
+.console-card:hover{border-color:#e94560;transform:translateY(-4px);box-shadow:0 8px 30px rgba(233,69,96,.2)}
+.console-icon{font-size:4em;margin-bottom:15px;display:block}
+.console-card h3{color:#e94560;font-size:1.5em;margin-bottom:8px}
+.console-card .console-year{color:#4ecca3;font-size:.85em;font-weight:700;margin-bottom:12px}
+.console-card p{color:#888;font-size:.88em;line-height:1.5}
+.console-card .console-specs{margin-top:15px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+.spec-badge{background:#1a1a2e;border:1px solid #0f3460;border-radius:6px;padding:5px 12px;font-size:.78em;color:#aaa}
+.spec-badge strong{color:#e0e0e0}
+.coming-soon{opacity:.5;pointer-events:none;position:relative}
+.coming-soon::after{content:'COMING SOON';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(233,69,96,.9);color:#fff;padding:8px 20px;border-radius:6px;font-size:1.1em;font-weight:700;letter-spacing:1px}
+footer{background:#16213e;text-align:center;padding:15px;border-top:1px solid #0f3460;color:#888;font-size:.9em}
 footer .heart{color:#e94560;font-size:1.1em}
 @media(max-width:600px){
-.header h1{font-size:1.4em}
-.header{padding:15px}
-.header-actions{position:static;transform:none;justify-content:center;margin-top:10px}
-.container{margin:15px auto}
-.upload-section{padding:20px}
-.game-row .cache-btn{font-size:.68em;padding:2px 6px}
+.header h1{font-size:1.6em}
+.header{padding:20px 15px}
+.container{margin:20px auto}
+.console-icon{font-size:3em}
 }
 </style>
 </head>
 <body>
-<div class="offline-banner" id="offline-banner">&#9888; You are offline &mdash; only cached games are available</div>
 <div class="header">
-<h1>&#127918; NES Game Player</h1>
-<p>Powered by EmulatorJS &bull; Static Edition</p>
-<div class="header-actions">
-<button class="icon-btn" onclick="openSettings()" title="Settings">&#9881;</button>
-</div>
+<h1>&#127918; Retro Game Player</h1>
+<p>Play classic console games in your browser &bull; Powered by EmulatorJS</p>
 </div>
 <div class="container">
-<h2>&#128193; Game Library</h2>
-<input type="text" id="search-bar" class="search-bar" placeholder="Search games..." oninput="filterGames()">
-<div class="filter-row">
-<button class="filter-btn active" id="filter-all" onclick="setFilter('all')">All Games</button>
-<button class="filter-btn" id="filter-offline" onclick="setFilter('offline')">&#128268; Offline Ready</button>
+<div class="intro">
+<h2>Choose Your Console</h2>
+<p>Select a gaming platform below to browse and play its game library. Games run directly in your browser with full on-screen touch controls on mobile.</p>
 </div>
-<div id="game-count" class="game-count"></div>
-<ul id="game-list" class="game-list"><li class="no-games">Loading...</li></ul>
+<div class="console-grid">
+<a href="/nes/" class="console-card">
+<span class="console-icon">&#128190;</span>
+<h3>NES</h3>
+<div class="console-year">Nintendo Entertainment System &bull; 1983</div>
+<p>The console that revived the video game industry. Home to legendary titles like Super Mario Bros., The Legend of Zelda, and Mega Man. Features a simple but iconic 2-button controller (A &amp; B).</p>
+<div class="console-specs">
+<span class="spec-badge"><strong>8-bit</strong> CPU</span>
+<span class="spec-badge"><strong>2</strong> Buttons</span>
+<span class="spec-badge"><strong>.nes</strong> ROMs</span>
+</div>
+</a>
+<a href="/snes/" class="console-card">
+<span class="console-icon">&#127923;</span>
+<h3>SNES</h3>
+<div class="console-year">Super Nintendo &bull; 1990</div>
+<p>The 16-bit powerhouse with an iconic 4-button diamond layout (A, B, X, Y) plus shoulder buttons. Home to Chrono Trigger, Super Mario World, A Link to the Past, and hundreds more masterpieces.</p>
+<div class="console-specs">
+<span class="spec-badge"><strong>16-bit</strong> CPU</span>
+<span class="spec-badge"><strong>4+2</strong> Buttons</span>
+<span class="spec-badge"><strong>.sfc/.smc</strong> ROMs</span>
+</div>
+</a>
+</div>
 </div>
 <footer>Built and Hosted by Parveen Bhadoo <span class="heart">&#10084;</span></footer>
-<div id="player-container">
-<button class="menu-toggle" id="menu-toggle" onclick="toggleToolbar()">&#9776;</button>
-<div class="player-toolbar" id="player-toolbar">
-<button class="toolbar-btn" id="fullscreen-btn" onclick="toggleFullscreen()">&#x26F6; Fullscreen</button>
-<button class="toolbar-btn" id="close-btn" onclick="closePlayer()">&#10005; Close</button>
-</div>
-<div id="game" style="width:100%;height:100%"></div>
-</div>
-<div class="modal-overlay" id="settings-modal">
-<div class="modal-box">
-<button class="modal-close-btn" onclick="closeSettings()">&#10005;</button>
-<h2>&#9881; Settings</h2>
-<h3>&#128250; Display</h3>
-<div class="setting-row">
-<label>Auto-Fullscreen on Play<span class="setting-desc">Automatically enter fullscreen when starting a game (mobile)</span></label>
-<div class="toggle-switch"><input type="checkbox" id="setting-auto-fullscreen" onchange="saveSetting('autoFullscreen',this.checked)"><span class="toggle-slider"></span></div>
-</div>
-<div class="setting-row">
-<label>Force Landscape in Fullscreen<span class="setting-desc">Lock screen orientation to landscape when in fullscreen</span></label>
-<div class="toggle-switch"><input type="checkbox" id="setting-force-landscape" onchange="saveSetting('forceLandscape',this.checked)"><span class="toggle-slider"></span></div>
-</div>
-<div class="setting-row">
-<label>Auto-Hide Toolbar<span class="setting-desc">Hide the close/fullscreen toolbar after 3 seconds during gameplay</span></label>
-<div class="toggle-switch"><input type="checkbox" id="setting-auto-hide-toolbar" onchange="saveSetting('autoHideToolbar',this.checked)"><span class="toggle-slider"></span></div>
-</div>
-<h3>&#127918; Controls</h3>
-<p style="color:#888;font-size:.85em;margin-bottom:5px">The NES controller has <strong style="color:#e0e0e0">A</strong> and <strong style="color:#e0e0e0">B</strong> action buttons, plus D-pad, Start, and Select. EmulatorJS renders these as an on-screen virtual gamepad on mobile.</p>
-<p style="color:#888;font-size:.85em">To remap keyboard controls, use the <strong style="color:#4ecca3">⚙ settings icon inside the emulator</strong> during gameplay.</p>
-<h3>&#128268; Offline Play</h3>
-<div class="setting-row">
-<label>Service Worker Status<span class="setting-desc" id="sw-status">Checking...</span></label>
-</div>
-<div class="setting-row">
-<label>Cached Games<span class="setting-desc" id="cached-count">0 games cached for offline play</span></label>
-<button class="btn btn-small btn-warning" onclick="clearAllCachedRoms()">Clear All</button>
-</div>
-<p style="color:#888;font-size:.8em;margin-top:10px">Use the &#128268; button next to each game to cache it for offline play.</p>
-<h3>&#8505; About</h3>
-<p style="color:#888;font-size:.85em">NES Game Player using EmulatorJS.<br>Settings stored locally on your device via localStorage.</p>
-</div>
-</div>
-<script>
-// === SETTINGS ===
-var DEFAULT_SETTINGS={autoFullscreen:false,forceLandscape:true,autoHideToolbar:true};
-
-function loadSettings(){try{var s=JSON.parse(localStorage.getItem('nesPlayerSettings'));return Object.assign({},DEFAULT_SETTINGS,s)}catch(e){return Object.assign({},DEFAULT_SETTINGS)}}
-function saveSetting(k,v){var s=loadSettings();s[k]=v;localStorage.setItem('nesPlayerSettings',JSON.stringify(s))}
-function applySettingsToUI(){var s=loadSettings();document.getElementById('setting-auto-fullscreen').checked=s.autoFullscreen;document.getElementById('setting-force-landscape').checked=s.forceLandscape;document.getElementById('setting-auto-hide-toolbar').checked=s.autoHideToolbar}
-
-
-// === SETTINGS MODAL ===
-function openSettings(){applySettingsToUI();updateCachedCount();document.getElementById('settings-modal').classList.add('active')}
-function closeSettings(){document.getElementById('settings-modal').classList.remove('active')}
-document.getElementById('settings-modal').addEventListener('click',function(e){if(e.target===this)closeSettings()});
-
-// === FULLSCREEN ===
-function toggleFullscreen(){var c=document.getElementById('player-container');if(!document.fullscreenElement&&!document.webkitFullscreenElement){var req=c.requestFullscreen||c.webkitRequestFullscreen||c.mozRequestFullScreen;if(req){req.call(c).then(function(){var s=loadSettings();if(s.forceLandscape&&screen.orientation&&screen.orientation.lock){screen.orientation.lock('landscape').catch(function(){})}}).catch(function(){})}}else{var ex=document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen;if(ex)ex.call(document);if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock()}}
-document.addEventListener('fullscreenchange',updateFullscreenUI);document.addEventListener('webkitfullscreenchange',updateFullscreenUI);
-function updateFullscreenUI(){var fs=!!(document.fullscreenElement||document.webkitFullscreenElement);var btn=document.getElementById('fullscreen-btn');if(fs){btn.innerHTML='&#10006; Exit FS';btn.classList.add('active');document.body.classList.add('fullscreen-active')}else{btn.innerHTML='&#x26F6; Fullscreen';btn.classList.remove('active');document.body.classList.remove('fullscreen-active');if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock()}}
-
-// === TOOLBAR TOGGLE ===
-var toolbarTimer=null;
-function toggleToolbar(){var tb=document.getElementById('player-toolbar');if(tb.classList.contains('visible')){tb.classList.remove('visible');clearTimeout(toolbarTimer)}else{tb.classList.add('visible');clearTimeout(toolbarTimer);toolbarTimer=setTimeout(function(){tb.classList.remove('visible')},5000)}}
-function resetToolbarTimer(){}
-
-// === SERVICE WORKER & OFFLINE ===
-var swReady=false,cachedRomUrls=new Set(),currentFilter='all';
-if('serviceWorker' in navigator){
-navigator.serviceWorker.register('/sw.js').then(function(reg){swReady=true;document.getElementById('sw-status').textContent='Active and running';requestCachedRomsList()}).catch(function(err){document.getElementById('sw-status').textContent='Failed: '+err.message});
-navigator.serviceWorker.addEventListener('message',function(event){
-var d=event.data;
-if(d.action==='cachedRomsList'){cachedRomUrls=new Set(d.urls);updateCachedCount();updateCacheBadges()}
-if(d.action==='romCached'){if(d.success){cachedRomUrls.add(d.url)}requestCachedRomsList()}
-if(d.action==='romUncached'){cachedRomUrls.delete(d.url);requestCachedRomsList()}
-})}
-function requestCachedRomsList(){if(navigator.serviceWorker.controller){navigator.serviceWorker.controller.postMessage({action:'getCachedRoms'})}}
-function isRomCached(file){var url=location.origin+'/roms/'+encodeURIComponent(file);for(var u of cachedRomUrls){if(decodeURIComponent(u)===decodeURIComponent(url)||u===url)return true}return false}
-function cacheRom(file,btn){if(!navigator.serviceWorker.controller)return;var url=location.origin+'/roms/'+encodeURIComponent(file);btn.textContent='Caching...';btn.disabled=true;navigator.serviceWorker.controller.postMessage({action:'cacheRom',url:url})}
-function uncacheRom(file,btn){if(!navigator.serviceWorker.controller)return;var url=location.origin+'/roms/'+encodeURIComponent(file);navigator.serviceWorker.controller.postMessage({action:'uncacheRom',url:url})}
-function updateCachedCount(){document.getElementById('cached-count').textContent=cachedRomUrls.size+' games cached for offline play'}
-function updateCacheBadges(){document.querySelectorAll('.game-row').forEach(function(row){var file=row.dataset.file;if(!file)return;var badge=row.querySelector('.badge-offline');var btn=row.querySelector('.cache-btn');if(isRomCached(file)){if(!badge){var b=document.createElement('span');b.className='badge-offline';b.textContent='OFFLINE';row.querySelector('.game-badges').prepend(b)}if(btn){btn.textContent='Remove';btn.className='cache-btn cached';btn.onclick=function(e){e.stopPropagation();uncacheRom(file,btn)}}}else{if(badge)badge.remove();if(btn){btn.textContent='\u{1F50C} Cache';btn.className='cache-btn';btn.disabled=false;btn.onclick=function(e){e.stopPropagation();cacheRom(file,btn)}}}})}
-function clearAllCachedRoms(){if(!confirm('Remove all cached ROM files?'))return;cachedRomUrls.forEach(function(url){if(navigator.serviceWorker.controller){navigator.serviceWorker.controller.postMessage({action:'uncacheRom',url:url})}});cachedRomUrls.clear();updateCachedCount();updateCacheBadges()}
-function setFilter(f){currentFilter=f;document.getElementById('filter-all').classList.toggle('active',f==='all');document.getElementById('filter-offline').classList.toggle('active',f==='offline');filterGames()}
-
-// === OFFLINE DETECTION ===
-window.addEventListener('online',function(){document.getElementById('offline-banner').classList.remove('show')});
-window.addEventListener('offline',function(){document.getElementById('offline-banner').classList.add('show')});
-if(!navigator.onLine)document.getElementById('offline-banner').classList.add('show');
-
-// === GAME LIST ===
-var allGames=[],filteredGames=[],displayedCount=0,PAGE_SIZE=50,isLoadingMore=false;
-async function loadGameList(){try{var r=await fetch('roms/index.json?t='+Date.now());if(!r.ok)throw new Error('No index.json');allGames=await r.json();allGames.sort(function(a,b){return a.name.localeCompare(b.name)});filterGames()}catch(e){document.getElementById('game-list').innerHTML='<li class="no-games">No games yet. Upload a .nes ROM above!</li>';document.getElementById('game-count').textContent=''}}
-function filterGames(){var q=document.getElementById('search-bar').value.toLowerCase().trim();filteredGames=allGames;if(q)filteredGames=filteredGames.filter(function(g){return g.name.toLowerCase().includes(q)});if(currentFilter==='offline')filteredGames=filteredGames.filter(function(g){return isRomCached(g.file)});var c=document.getElementById('game-list'),cnt=document.getElementById('game-count');if(filteredGames.length===0){c.innerHTML='<li class="no-games">'+(currentFilter==='offline'?'No cached games. Cache some games for offline play!':'No games match your search')+'</li>';cnt.textContent=q?'0 results':'';return}cnt.textContent=(q||currentFilter==='offline')?filteredGames.length+' of '+allGames.length+' games':allGames.length+' games';c.innerHTML='';displayedCount=0;loadMoreGames()}
-function loadMoreGames(){if(isLoadingMore)return;isLoadingMore=true;var c=document.getElementById('game-list'),end=Math.min(displayedCount+PAGE_SIZE,filteredGames.length);for(var i=displayedCount;i<end;i++){var g=filteredGames[i],li=document.createElement('li');li.className='game-row';li.dataset.file=g.file;var cached=isRomCached(g.file);li.innerHTML='<span class="game-name">'+escapeHtml(g.name)+'</span><span class="game-badges">'+(cached?'<span class="badge-offline">OFFLINE</span>':'')+'<button class="cache-btn'+(cached?' cached':'')+'">'+(cached?'Remove':'\u{1F50C} Cache')+'</button></span><span class="play-icon">&#9654;</span>';li.onclick=function(file){return function(){launchGame('roms/'+encodeURIComponent(file))}}(g.file);var cBtn=li.querySelector('.cache-btn');(function(file,btn){btn.onclick=function(e){e.stopPropagation();if(isRomCached(file)){uncacheRom(file,btn)}else{cacheRom(file,btn)}}})(g.file,cBtn);c.appendChild(li)}displayedCount=end;var old=document.getElementById('load-more-sentinel');if(old)old.remove();if(displayedCount<filteredGames.length){var s=document.createElement('li');s.id='load-more-sentinel';s.className='no-games';s.textContent='Showing '+displayedCount+' of '+filteredGames.length+' \u2014 scroll for more';s.style.cursor='pointer';s.onclick=function(){loadMoreGames()};c.appendChild(s);observeSentinel(s)}isLoadingMore=false}
-var observer=null;
-function observeSentinel(el){if(observer)observer.disconnect();observer=new IntersectionObserver(function(entries){if(entries[0].isIntersecting)loadMoreGames()},{rootMargin:'200px'});observer.observe(el)}
-function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
-
-
-// === EMULATOR LAUNCH ===
-function launchGame(romUrl){
-var p=document.getElementById('player-container'),g=document.getElementById('game');
-p.style.display='block';g.innerHTML='';
-window.EJS_player='#game';
-window.EJS_gameUrl=romUrl;
-window.EJS_core='nes';
-window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
-var old=document.getElementById('ejs-script');if(old)old.remove();
-var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
-resetToolbarTimer();
-var settings=loadSettings();
-if(settings.autoFullscreen){setTimeout(function(){toggleFullscreen()},1000)}
-}
-function closePlayer(){
-var ex=document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen;
-if(document.fullscreenElement||document.webkitFullscreenElement){if(ex)ex.call(document)}
-if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock();
-document.getElementById('player-container').style.display='none';
-document.getElementById('game').innerHTML='';
-delete window.EJS_player;delete window.EJS_gameUrl;delete window.EJS_core;
-clearTimeout(toolbarTimer);
-location.reload();
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('player-container').style.display==='block'){closePlayer()}});
-loadGameList();
-</script>
 </body>
 </html>
