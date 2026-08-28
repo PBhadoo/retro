@@ -161,29 +161,24 @@ footer .heart{color:#e94560;font-size:1.1em}
 <p style="color:#888;font-size:.85em">NES Game Player using EmulatorJS.<br>Settings stored locally on your device via localStorage.</p>
 </div>
 </div>
+<script src="/keybinds.js"></script>
 <script>
 // === SETTINGS ===
+var CORE='nes';
 var DEFAULT_SETTINGS={autoFullscreen:false,forceLandscape:true,autoHideToolbar:true};
-var DEFAULT_KEYBINDS={up:'ArrowUp',down:'ArrowDown',left:'ArrowLeft',right:'ArrowRight',a:'x',b:'z',start:'Enter',select:'Shift',l:'a',r:'s'};
-var KEYBIND_LABELS={up:'D-Pad Up',down:'D-Pad Down',left:'D-Pad Left',right:'D-Pad Right',a:'A Button',b:'B Button',start:'Start',select:'Select',l:'L Shoulder',r:'R Shoulder'};
 
 function loadSettings(){try{var s=JSON.parse(localStorage.getItem('nesPlayerSettings'));return Object.assign({},DEFAULT_SETTINGS,s)}catch(e){return Object.assign({},DEFAULT_SETTINGS)}}
 function saveSetting(k,v){var s=loadSettings();s[k]=v;localStorage.setItem('nesPlayerSettings',JSON.stringify(s))}
-function loadKeyBindings(){try{var s=JSON.parse(localStorage.getItem('nesKeyBindings'));return Object.assign({},DEFAULT_KEYBINDS,s)}catch(e){return Object.assign({},DEFAULT_KEYBINDS)}}
-function saveKeyBindings(b){localStorage.setItem('nesKeyBindings',JSON.stringify(b))}
-function resetKeyBindings(){localStorage.removeItem('nesKeyBindings');renderKeyBindUI()}
 function applySettingsToUI(){var s=loadSettings();document.getElementById('setting-auto-fullscreen').checked=s.autoFullscreen;document.getElementById('setting-force-landscape').checked=s.forceLandscape;document.getElementById('setting-auto-hide-toolbar').checked=s.autoHideToolbar}
 
 // === KEY BINDING UI ===
-var currentListeningBtn=null,currentListeningAction=null;
-function formatKeyName(k){if(!k)return'\u2014';var m={'ArrowUp':'\u2191 Up','ArrowDown':'\u2193 Down','ArrowLeft':'\u2190 Left','ArrowRight':'\u2192 Right','Enter':'\u21B5 Enter','Shift':'\u21E7 Shift',' ':'Space','Escape':'Esc','Backspace':'\u232B Back','Tab':'\u21E5 Tab','Control':'Ctrl'};return m[k]||k.toUpperCase()}
-function renderKeyBindUI(){var b=loadKeyBindings(),c=document.getElementById('keybind-list');c.innerHTML='';for(var a in KEYBIND_LABELS){var r=document.createElement('div');r.className='setting-row';r.innerHTML='<label>'+KEYBIND_LABELS[a]+'</label><button class="key-bind-btn" data-action="'+a+'">'+formatKeyName(b[a])+'</button>';c.appendChild(r)}c.querySelectorAll('.key-bind-btn').forEach(function(btn){btn.addEventListener('click',function(){startListening(this,this.dataset.action)})})}
-function startListening(btn,action){if(currentListeningBtn){var b=loadKeyBindings();currentListeningBtn.classList.remove('listening');currentListeningBtn.textContent=formatKeyName(b[currentListeningAction])}currentListeningBtn=btn;currentListeningAction=action;btn.classList.add('listening');btn.textContent='Press a key...'}
-document.addEventListener('keydown',function(e){if(!currentListeningBtn)return;e.preventDefault();e.stopPropagation();var k=e.key;if(k==='Escape'){currentListeningBtn.classList.remove('listening');var b=loadKeyBindings();currentListeningBtn.textContent=formatKeyName(b[currentListeningAction]);currentListeningBtn=null;currentListeningAction=null;return}var b=loadKeyBindings();b[currentListeningAction]=k;saveKeyBindings(b);currentListeningBtn.classList.remove('listening');currentListeningBtn.textContent=formatKeyName(k);currentListeningBtn=null;currentListeningAction=null},true);
+var stopKeyBindUI=null;
+function resetKeyBindings(){RetroKeybinds.resetKeyBinds(CORE);renderKeyBindings()}
+function renderKeyBindings(){if(stopKeyBindUI)stopKeyBindUI();stopKeyBindUI=RetroKeybinds.renderKeyBindUI(document.getElementById('keybind-list'),CORE)}
 
 // === SETTINGS MODAL ===
-function openSettings(){applySettingsToUI();renderKeyBindUI();updateCachedCount();document.getElementById('settings-modal').classList.add('active')}
-function closeSettings(){document.getElementById('settings-modal').classList.remove('active');if(currentListeningBtn){currentListeningBtn.classList.remove('listening');currentListeningBtn=null;currentListeningAction=null}}
+function openSettings(){applySettingsToUI();renderKeyBindings();updateCachedCount();document.getElementById('settings-modal').classList.add('active')}
+function closeSettings(){document.getElementById('settings-modal').classList.remove('active');if(stopKeyBindUI){stopKeyBindUI();stopKeyBindUI=null}}
 document.getElementById('settings-modal').addEventListener('click',function(e){if(e.target===this)closeSettings()});
 
 // === FULLSCREEN ===
@@ -243,6 +238,7 @@ window.EJS_player='#game';
 window.EJS_gameUrl=romUrl;
 window.EJS_core='nes';
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
+window.EJS_defaultControls=RetroKeybinds.buildDefaultControls(CORE);
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
 resetToolbarTimer();
@@ -255,11 +251,11 @@ if(document.fullscreenElement||document.webkitFullscreenElement){if(ex)ex.call(d
 if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock();
 document.getElementById('player-container').style.display='none';
 document.getElementById('game').innerHTML='';
-delete window.EJS_player;delete window.EJS_gameUrl;delete window.EJS_core;
+delete window.EJS_player;delete window.EJS_gameUrl;delete window.EJS_core;delete window.EJS_defaultControls;
 clearTimeout(toolbarTimer);
 location.reload();
 }
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('player-container').style.display==='block'&&!currentListeningBtn){closePlayer()}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('player-container').style.display==='block'){closePlayer()}});
 loadGameList();
 </script>
 </body>

@@ -71,6 +71,10 @@ body{background:#1a1a2e;color:#e0e0e0;font-family:'Segoe UI',Tahoma,Geneva,Verda
 .filter-btn{background:#0f3460;color:#e0e0e0;border:none;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:.85em}
 .filter-btn:hover{background:#1a4a8a}
 .filter-btn.active{background:#7b2ff7;color:#fff}
+.key-bind-btn{background:#1a1a2e;border:1px solid #0f3460;color:#e0e0e0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:.9em;min-width:100px;text-align:center;transition:all .2s}
+.key-bind-btn:hover{border-color:#7b2ff7}
+.key-bind-btn.listening{border-color:#f0a500;color:#f0a500;animation:pulse .8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 footer{background:#16213e;text-align:center;padding:15px;margin-top:40px;border-top:1px solid #0f3460;color:#888;font-size:.9em}
 footer .heart{color:#7b2ff7;font-size:1.1em}
 @media(max-width:600px){
@@ -124,8 +128,11 @@ footer .heart{color:#7b2ff7;font-size:1.1em}
 <label>Force Landscape in Fullscreen<span class="setting-desc">Lock screen orientation to landscape</span></label>
 <div class="toggle-switch"><input type="checkbox" id="setting-force-landscape" onchange="saveSetting('forceLandscape',this.checked)"><span class="toggle-slider"></span></div>
 </div>
-<h3>&#127918; Controls</h3>
-<p style="color:#888;font-size:.85em">The SNES controller features <strong style="color:#e0e0e0">A, B, X, Y</strong> in a diamond layout plus <strong style="color:#e0e0e0">L &amp; R</strong> shoulder buttons, D-pad, Start, and Select. Use the ⚙ icon inside the emulator to remap keys.</p>
+<h3>&#127918; Keyboard Controls (Desktop)</h3>
+<p style="color:#888;font-size:.8em;margin-bottom:10px">Click a button, then press the key you want to assign. Saved on this device and used the next time you start a game.</p>
+<div id="keybind-list"></div>
+<div style="margin-top:10px"><button class="btn btn-small btn-secondary" onclick="resetKeyBindings()">Reset to Defaults</button></div>
+<p style="color:#888;font-size:.78em;margin-top:10px">Note: if you've already remapped a specific game from the ⚙ icon inside the emulator, that per-game remap takes priority over these defaults for that game.</p>
 <h3>&#128268; Offline Play</h3>
 <div class="setting-row">
 <label>Service Worker Status<span class="setting-desc" id="sw-status">Checking...</span></label>
@@ -136,14 +143,19 @@ footer .heart{color:#7b2ff7;font-size:1.1em}
 </div>
 </div>
 </div>
+<script src="/keybinds.js"></script>
 <script>
 var CORE='snes', ROMS_PATH='/snes-roms/', SETTINGS_KEY='snesPlayerSettings';
 var DEFAULT_SETTINGS={autoFullscreen:false,forceLandscape:true};
 function loadSettings(){try{return Object.assign({},DEFAULT_SETTINGS,JSON.parse(localStorage.getItem(SETTINGS_KEY)))}catch(e){return Object.assign({},DEFAULT_SETTINGS)}}
 function saveSetting(k,v){var s=loadSettings();s[k]=v;localStorage.setItem(SETTINGS_KEY,JSON.stringify(s))}
 function applySettingsToUI(){var s=loadSettings();document.getElementById('setting-auto-fullscreen').checked=s.autoFullscreen;document.getElementById('setting-force-landscape').checked=s.forceLandscape}
-function openSettings(){applySettingsToUI();updateCachedCount();document.getElementById('settings-modal').classList.add('active')}
-function closeSettings(){document.getElementById('settings-modal').classList.remove('active')}
+
+var stopKeyBindUI=null;
+function resetKeyBindings(){RetroKeybinds.resetKeyBinds(CORE);renderKeyBindings()}
+function renderKeyBindings(){if(stopKeyBindUI)stopKeyBindUI();stopKeyBindUI=RetroKeybinds.renderKeyBindUI(document.getElementById('keybind-list'),CORE)}
+function openSettings(){applySettingsToUI();renderKeyBindings();updateCachedCount();document.getElementById('settings-modal').classList.add('active')}
+function closeSettings(){document.getElementById('settings-modal').classList.remove('active');if(stopKeyBindUI){stopKeyBindUI();stopKeyBindUI=null}}
 document.getElementById('settings-modal').addEventListener('click',function(e){if(e.target===this)closeSettings()});
 
 function toggleFullscreen(){var c=document.getElementById('player-container');if(!document.fullscreenElement&&!document.webkitFullscreenElement){var req=c.requestFullscreen||c.webkitRequestFullscreen;if(req)req.call(c).then(function(){var s=loadSettings();if(s.forceLandscape&&screen.orientation&&screen.orientation.lock)screen.orientation.lock('landscape').catch(function(){})}).catch(function(){})}else{var ex=document.exitFullscreen||document.webkitExitFullscreen;if(ex)ex.call(document);if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock()}}
@@ -188,6 +200,7 @@ var p=document.getElementById('player-container'),g=document.getElementById('gam
 p.style.display='block';g.innerHTML='';
 window.EJS_player='#game';window.EJS_gameUrl=romUrl;window.EJS_core=CORE;
 window.EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';
+window.EJS_defaultControls=RetroKeybinds.buildDefaultControls(CORE);
 var old=document.getElementById('ejs-script');if(old)old.remove();
 var sc=document.createElement('script');sc.id='ejs-script';sc.src='https://cdn.emulatorjs.org/stable/data/loader.js';document.body.appendChild(sc);
 var settings=loadSettings();if(settings.autoFullscreen)setTimeout(function(){toggleFullscreen()},1000);
@@ -197,7 +210,7 @@ var ex=document.exitFullscreen||document.webkitExitFullscreen;
 if(document.fullscreenElement||document.webkitFullscreenElement){if(ex)ex.call(document)}
 if(screen.orientation&&screen.orientation.unlock)screen.orientation.unlock();
 document.getElementById('player-container').style.display='none';document.getElementById('game').innerHTML='';
-delete window.EJS_player;delete window.EJS_gameUrl;delete window.EJS_core;
+delete window.EJS_player;delete window.EJS_gameUrl;delete window.EJS_core;delete window.EJS_defaultControls;
 clearTimeout(toolbarTimer);location.reload();
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('player-container').style.display==='block')closePlayer()});
