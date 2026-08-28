@@ -8,6 +8,7 @@ A self-hosted retro NES game player powered by EmulatorJS, with password authent
 - **Password protected** — simple password auth (no username required)
 - **Upload & Play** — upload `.nes` ROMs through the web UI, saved permanently on the server
 - **Searchable game library** — instant search filtering across all games
+- **Configurable keyboard controls** — sensible keyboard defaults for desktop play, remappable per-button from the in-page Settings menu
 - **Alphabetical listing** — games sorted A-Z in a clean row-based layout
 - **Lazy loading** — shows 50 games at a time, loads more on scroll
 - **Automatic HTTPS** — Caddy reverse proxy with free Let's Encrypt SSL
