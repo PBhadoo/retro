@@ -2,10 +2,11 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 
-const PORT = 80;
-const ROMS_DIR = path.join(__dirname, 'roms');
-const WEB_DIR = path.join(__dirname, 'web');
+const PORT = process.env.PORT || 80;
+const ROMS_DIR = path.join(__dirname, 'pages', 'roms');
+const WEB_DIR = path.join(__dirname, 'pages');
 const INDEX_JSON = path.join(ROMS_DIR, 'index.json');
 
 // Password auth config
@@ -19,6 +20,8 @@ const MIME_TYPES = {
   '.js': 'application/javascript',
   '.json': 'application/json',
   '.nes': 'application/octet-stream',
+  '.sfc': 'application/octet-stream',
+  '.smc': 'application/octet-stream',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.gif': 'image/gif',
@@ -33,15 +36,51 @@ function getMime(filePath) {
   return MIME_TYPES[ext] || 'application/octet-stream';
 }
 
-function serveFile(res, filePath) {
+function serveFile(req, res, filePath) {
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('Not Found');
       return;
     }
-    res.writeHead(200, { 'Content-Type': getMime(filePath) });
-    fs.createReadStream(filePath).pipe(res);
+
+    const mime = getMime(filePath);
+    const etag = `W/"${stats.size}-${stats.mtimeMs.toString(16)}"`;
+
+    if (req.headers['if-none-match'] === etag) {
+      res.writeHead(304, { 'ETag': etag });
+      res.end();
+      return;
+    }
+
+    const headers = {
+      'Content-Type': mime,
+      'ETag': etag,
+    };
+
+    const ext = path.extname(filePath).toLowerCase();
+    // Cache ROMs and static assets
+    if (['.nes', '.sfc', '.smc', '.png', '.jpg', '.jpeg', '.svg', '.ico', '.zip', '.7z'].includes(ext)) {
+      headers['Cache-Control'] = 'public, max-age=86400';
+    } else {
+      headers['Cache-Control'] = 'no-cache';
+    }
+
+    // Check if client supports gzip and file is text-based / JSON
+    const acceptEncoding = req.headers['accept-encoding'] || '';
+    const isCompressible = ['.html', '.css', '.js', '.json', '.svg'].includes(ext) || mime.startsWith('text/') || mime === 'application/json' || mime === 'application/javascript';
+
+    if (isCompressible && acceptEncoding.includes('gzip')) {
+      headers['Content-Encoding'] = 'gzip';
+      res.writeHead(200, headers);
+      const rawStream = fs.createReadStream(filePath);
+      const gzipStream = zlib.createGzip();
+      rawStream.pipe(gzipStream).pipe(res);
+    } else {
+      headers['Content-Length'] = stats.size;
+      res.writeHead(200, headers);
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 }
 
@@ -73,7 +112,7 @@ function isAuthenticated(req) {
   return cookies[COOKIE_NAME] === AUTH_TOKEN;
 }
 
-function serveLoginPage(res, errorMsg) {
+function serveLoginPage(req, res, errorMsg) {
   const error = errorMsg ? `<p class="error">${errorMsg}</p>` : '';
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -167,8 +206,26 @@ function serveLoginPage(res, errorMsg) {
     <footer>Built and Hosted by Parveen Bhadoo <span class="heart">&#10084;</span></footer>
 </body>
 </html>`;
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-  res.end(html);
+
+  const acceptEncoding = req.headers['accept-encoding'] || '';
+  if (acceptEncoding.includes('gzip')) {
+    zlib.gzip(Buffer.from(html, 'utf8'), (err, zipped) => {
+      if (err) {
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(html);
+      } else {
+        res.writeHead(200, {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Content-Encoding': 'gzip',
+          'Content-Length': zipped.length
+        });
+        res.end(zipped);
+      }
+    });
+  } else {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(html);
+  }
 }
 
 function parseFormBody(buffer) {
@@ -206,7 +263,7 @@ const server = http.createServer((req, res) => {
         });
         res.end();
       } else {
-        serveLoginPage(res, 'Wrong password. Try again.');
+        serveLoginPage(req, res, 'Wrong password. Try again.');
       }
     });
     return;
@@ -224,7 +281,7 @@ const server = http.createServer((req, res) => {
 
   // Check auth for all other routes
   if (!isAuthenticated(req)) {
-    serveLoginPage(res);
+    serveLoginPage(req, res);
     return;
   }
 
@@ -243,10 +300,10 @@ const server = http.createServer((req, res) => {
       const buffer = Buffer.concat(chunks);
       const parts = parseMultipart(buffer, boundary);
 
-      const filePart = parts.find(p => p.filename && p.filename.endsWith('.nes'));
+      const filePart = parts.find(p => p.filename && (p.filename.toLowerCase().endsWith('.nes') || p.filename.toLowerCase().endsWith('.sfc') || p.filename.toLowerCase().endsWith('.smc')));
       if (!filePart) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'No .nes file found in upload' }));
+        res.end(JSON.stringify({ error: 'No supported ROM file found in upload' }));
         return;
       }
 
@@ -259,7 +316,7 @@ const server = http.createServer((req, res) => {
       // Update index.json - add to top of list
       const games = loadIndex();
       const filtered = games.filter(g => g.file !== filename);
-      const displayName = filename.replace(/\.nes$/i, '').replace(/\s*\(.*?\)/g, '').trim();
+      const displayName = filename.replace(/\.(nes|sfc|smc)$/i, '').replace(/\s*\(.*?\)/g, '').trim();
       filtered.unshift({ name: displayName, file: filename });
       saveIndex(filtered);
 
@@ -278,16 +335,16 @@ const server = http.createServer((req, res) => {
   // Serve from roms/ if path starts with /roms/
   if (urlPath.startsWith('/roms/')) {
     const romPath = path.join(ROMS_DIR, urlPath.substring(6));
-    serveFile(res, romPath);
+    serveFile(req, res, romPath);
     return;
   }
 
   // Serve from web/
   const webPath = path.join(WEB_DIR, urlPath);
-  serveFile(res, webPath);
+  serveFile(req, res, webPath);
 });
 
-// Simple multipart parser
+// Simple multipart parser using native Buffer methods for high performance
 function getBoundary(contentType) {
   if (!contentType) return null;
   const match = contentType.match(/boundary=(?:"([^"]+)"|([^\s;]+))/);
@@ -298,26 +355,27 @@ function parseMultipart(buffer, boundary) {
   const parts = [];
   const boundaryBuf = Buffer.from('--' + boundary);
   const endBuf = Buffer.from('--' + boundary + '--');
+  const crlfCrlfBuf = Buffer.from('\r\n\r\n');
 
-  let start = indexOf(buffer, boundaryBuf, 0);
+  let start = buffer.indexOf(boundaryBuf, 0);
   if (start === -1) return parts;
 
   while (true) {
     start = start + boundaryBuf.length;
     if (buffer[start] === 0x0d && buffer[start + 1] === 0x0a) start += 2;
 
-    const nextBoundary = indexOf(buffer, boundaryBuf, start);
+    const nextBoundary = buffer.indexOf(boundaryBuf, start);
     if (nextBoundary === -1) break;
 
-    const partData = buffer.slice(start, nextBoundary);
+    const partData = buffer.subarray(start, nextBoundary);
 
-    const headerEnd = indexOf(partData, Buffer.from('\r\n\r\n'), 0);
+    const headerEnd = partData.indexOf(crlfCrlfBuf, 0);
     if (headerEnd === -1) { start = nextBoundary; continue; }
 
-    const headerStr = partData.slice(0, headerEnd).toString('utf8');
-    let body = partData.slice(headerEnd + 4);
+    const headerStr = partData.subarray(0, headerEnd).toString('utf8');
+    let body = partData.subarray(headerEnd + 4);
     if (body.length >= 2 && body[body.length - 2] === 0x0d && body[body.length - 1] === 0x0a) {
-      body = body.slice(0, body.length - 2);
+      body = body.subarray(0, body.length - 2);
     }
 
     const filenameMatch = headerStr.match(/filename="([^"]+)"/);
@@ -329,22 +387,11 @@ function parseMultipart(buffer, boundary) {
       data: body,
     });
 
-    if (indexOf(buffer, endBuf, nextBoundary) === nextBoundary) break;
+    if (buffer.indexOf(endBuf, nextBoundary) === nextBoundary) break;
     start = nextBoundary;
   }
 
   return parts;
-}
-
-function indexOf(buf, search, from) {
-  for (let i = from; i <= buf.length - search.length; i++) {
-    let found = true;
-    for (let j = 0; j < search.length; j++) {
-      if (buf[i + j] !== search[j]) { found = false; break; }
-    }
-    if (found) return i;
-  }
-  return -1;
 }
 
 server.listen(PORT, () => {

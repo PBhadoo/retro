@@ -106,7 +106,7 @@ footer .heart{color:#7b2ff7;font-size:1.1em}
 </div>
 <div class="container">
 <h2>&#128193; SNES Game Library</h2>
-<input type="text" id="search-bar" class="search-bar" placeholder="Search SNES games..." oninput="filterGames()">
+<input type="text" id="search-bar" class="search-bar" placeholder="Search SNES games..." oninput="onSearchInput()">
 <div class="filter-row">
 <button class="filter-btn active" id="filter-all" onclick="setFilter('all')">All Games</button>
 <button class="filter-btn" id="filter-offline" onclick="setFilter('offline')">&#128268; Offline Ready</button>
@@ -207,6 +207,8 @@ if(!navigator.onLine)document.getElementById('offline-banner').classList.add('sh
 
 var allGames=[],filteredGames=[],displayedCount=0,PAGE_SIZE=50,isLoadingMore=false;
 async function loadGameList(){try{var r=await fetch(ROMS_PATH+'index.json?t='+Date.now());if(!r.ok)throw new Error();allGames=await r.json();allGames.sort(function(a,b){return a.name.localeCompare(b.name)});filterGames()}catch(e){document.getElementById('game-list').innerHTML='<li class="no-games">No SNES games found. Add .sfc or .smc ROM files to get started.</li>';document.getElementById('game-count').textContent=''}}
+var searchTimer=null;
+function onSearchInput(){clearTimeout(searchTimer);searchTimer=setTimeout(filterGames,150);}
 function filterGames(){var q=document.getElementById('search-bar').value.toLowerCase().trim();filteredGames=allGames;if(q)filteredGames=filteredGames.filter(function(g){return g.name.toLowerCase().includes(q)});if(currentFilter==='offline')filteredGames=filteredGames.filter(function(g){return isRomCached(g.file)});var c=document.getElementById('game-list'),cnt=document.getElementById('game-count');if(filteredGames.length===0){c.innerHTML='<li class="no-games">'+(currentFilter==='offline'?'No cached games.':'No games match your search')+'</li>';cnt.textContent=q?'0 results':'';return}cnt.textContent=(q||currentFilter==='offline')?filteredGames.length+' of '+allGames.length+' games':allGames.length+' games';c.innerHTML='';displayedCount=0;loadMoreGames()}
 function loadMoreGames(){if(isLoadingMore)return;isLoadingMore=true;var c=document.getElementById('game-list'),end=Math.min(displayedCount+PAGE_SIZE,filteredGames.length);for(var i=displayedCount;i<end;i++){var g=filteredGames[i],li=document.createElement('li');li.className='game-row';li.dataset.file=g.file;var cached=isRomCached(g.file);li.innerHTML='<span class="game-name">'+escapeHtml(g.name)+'</span><span class="game-badges">'+(cached?'<span class="badge-offline">OFFLINE</span>':'')+'<button class="cache-btn'+(cached?' cached':'')+'">'+(cached?'Remove':'\u{1F50C} Cache')+'</button></span><span class="play-icon">&#9654;</span>';li.onclick=function(file){return function(){launchGame(ROMS_PATH+encodeURIComponent(file))}}(g.file);var cBtn=li.querySelector('.cache-btn');(function(file,btn){btn.onclick=function(e){e.stopPropagation();if(isRomCached(file))uncacheRom(file,btn);else cacheRom(file,btn)}})(g.file,cBtn);c.appendChild(li)}displayedCount=end;var old=document.getElementById('load-more-sentinel');if(old)old.remove();if(displayedCount<filteredGames.length){var s=document.createElement('li');s.id='load-more-sentinel';s.className='no-games';s.textContent='Showing '+displayedCount+' of '+filteredGames.length+' — scroll for more';s.style.cursor='pointer';s.onclick=function(){loadMoreGames()};c.appendChild(s);observeSentinel(s)}isLoadingMore=false}
 var observer=null;
